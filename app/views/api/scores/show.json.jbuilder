@@ -1,0 +1,1 @@
+json.partial! 'api/scoreboards/score', score: @score

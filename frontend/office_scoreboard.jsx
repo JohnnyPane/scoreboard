@@ -5,9 +5,9 @@ import configureStore from './store/store';
 
 import { login } from './actions/session_actions';
 
+import { requestScores } from './actions/score_actions';
+import { fetchScores } from './util/score_api_util';
 
-// window.getState = store.getState;
-// window.dispatch = store.dispatch;
 
 document.addEventListener('DOMContentLoaded', () => {
 	let store;
@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	} else {
 		store = configureStore();
 	}
+	window.requestScores = requestScores;
+	window.getState = store.getState;
+	window.dispatch = store.dispatch;
+	window.fetchScores = fetchScores;
 
 	const root = document.getElementById('root');
 	ReactDOM.render(<Root store={store} />, root);

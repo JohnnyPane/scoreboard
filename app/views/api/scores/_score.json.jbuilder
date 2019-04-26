@@ -1,0 +1,1 @@
+json.extract! score, :game_type, :player1, :player2

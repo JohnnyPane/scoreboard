@@ -1,0 +1,1 @@
+export const selectAllScores = state => Object.values(state.entities.scores);
