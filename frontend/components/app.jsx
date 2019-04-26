@@ -11,7 +11,9 @@ import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_forms/login_form_container';
 import SignupFormContainer from './session_forms/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import ScoreIndexContainer from './score_index_container';
+import HomeContainer from './home/home_container';
+import ScoreFormContainer from './score_form/score_form_container';
+import MainScore from './main_score/main_score';
 
 const App = () => (
 	<div>
@@ -22,7 +24,9 @@ const App = () => (
 
   	<AuthRoute exact path="/login" component={LoginFormContainer} />
   	<AuthRoute exact path="/signup" component={SignupFormContainer} />
-  	<Route exact path="/" component={ScoreIndexContainer} />
+  	<Route exact path="/scores/new" component={ScoreFormContainer} />
+  	<MainScore />
+  	<Route exact path="/" component={HomeContainer} />
 	</div>
 );
 

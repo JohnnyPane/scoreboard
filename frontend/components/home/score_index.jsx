@@ -12,11 +12,12 @@ class ScoreIndex extends React.Component {
 		const { scores } = this.props;
 
 		return (
-			<section className="scores">
-				<ul>
-					{scores.map(score => <ScoreIndexItem key={score.id} scores={score} />)}
-				</ul>
-			</section>
+				<div>
+					<h1>Scores:</h1>
+					<ul>
+						{scores.map(bench => ( <ScoreIndexItem score={score} key={score.id} /> ))}
+					</ul>
+				</div>
 		);
 	}
 } 

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
-import { selectAllScores } from '../reducers/selectors';
-import ScoreIndex from './score_index';
-import { requestScores } from '../actions/score_actions';
+import { selectAllScores } from '../../reducers/selectors';
+import Home from './score_index';
+import { requestScores } from '../../actions/score_actions';
 
 const mapStateToProps = state => ({
 	scores: selectAllScores(state)
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(ScoreIndex);
+)(Home);

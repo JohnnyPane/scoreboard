@@ -13,3 +13,64 @@
  *= require_tree .
  *= require_self
  */
+
+ 
+#main-scoreboard {
+	height: 350px;
+	width: 600px;
+	border: 1px solid green;
+	margin: 0 auto;
+}
+
+#main-scoreboard > h3 {
+	text-align: center;
+	margin: 0 auto;
+	align-items: center;
+}
+
+/*.player-names {
+	float: left;
+	display: flex;
+}*/
+
+header {
+	display: flex;
+	justify-content: space-between;
+	margin-left: 20px;
+}
+
+hgroup {
+	display: flex;
+	justify-content: space-between;
+	margin-left: 20px; 
+	align-items: center;
+}
+
+.header-name {
+	margin-right: 20px;
+}
+
+.header-button {
+	height: 15px;
+	margin-right: 20px;
+}
+/*
+.score-wrapper {
+
+	margin: 50px;
+	text-align: center;
+	float: left;
+	justify-content: space-between;
+}*/
+
+.player-score {
+	text-align: center;
+	float: left;
+	justify-content: space-between;
+	margin: 50px;
+}
+
+.player-score > button {
+	margin: 3px;
+}
+
