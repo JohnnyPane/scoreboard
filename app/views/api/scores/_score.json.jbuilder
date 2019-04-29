@@ -1,1 +1,1 @@
-json.extract! score, :game_type, :player1, :player2
+json.extract! score, :id, :game_type, :player_one, :player_two, :author_id

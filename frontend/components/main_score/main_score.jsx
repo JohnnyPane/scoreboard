@@ -21,13 +21,13 @@ class MainScore extends React.Component {
 				<div id="main-scoreboard" >
 					<h3>{this.state.game_type}</h3>
 					<br/>
+					<PlayerOneScore />
+					<PlayerTwoScore />
 					<div className="player-names">
 						<h4>{this.state.player1}</h4>
 						<h4>{this.state.player2}</h4>
 					</div>
-					<PlayerOneScore />
-					<PlayerTwoScore />
-					
+					<span className="final-score">{this.state.final_score}</span>
 				</div>
 			</div>
 		)

@@ -1,1 +1,1 @@
-json.partial! 'api/scoreboards/score', score: @score
+json.partial! 'api/scores/score', score: @score

@@ -25,8 +25,7 @@ const App = () => (
   	<AuthRoute exact path="/login" component={LoginFormContainer} />
   	<AuthRoute exact path="/signup" component={SignupFormContainer} />
   	<Route exact path="/scores/new" component={ScoreFormContainer} />
-  	<MainScore />
-  	<Route exact path="/" component={HomeContainer} />
+  	<ProtectedRoute exact path="/" component={ScoreFormContainer} />
 	</div>
 );
 

@@ -1,6 +1,9 @@
 class Api::ScoresController < ApplicationController
 	def create
 		@score = Score.new(score_params)
+
+		@score.author_id = current_user.id
+
 		if @score.save
 			render :show
 		else
@@ -21,6 +24,6 @@ class Api::ScoresController < ApplicationController
 	private 
 
 	def score_params
-		params.require(:score).permit(:game_type, :player1, :player2, :author_id)
+		params.require(:score).permit(:game_type, :player_one, :player_two, :author_id)
 	end
 end 

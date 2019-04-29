@@ -7,13 +7,14 @@ class ScoreForm extends React.Component {
 		this.state = {
 			game_type: '',
 			player_one: '',
-			player_two: ''
+			player_two: '',
+			final_score: 25
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
-		this.navigateToSearch = this.navigateToSearch.bind(this);
+		this.navigateToScoreboard = this.navigateToScoreboard.bind(this);
 	}
 
-	navigateToSearch() {
+	navigateToScoreboard() {
 		this.props.history.push('/');
 	}
 
@@ -29,17 +30,18 @@ class ScoreForm extends React.Component {
 		formData.append('score[game_type]', this.state.game_type);
 		formData.append('score[player_one]', this.state.player_one);
 		formData.append('score[player_two]', this.state.player_two);
+		formData.append('score[final_score]', this.state.final_score);
 		this.props.createScore(formData);
-		this.navigateToSearch();
+		this.navigateToScoreboard();
 	}
 
 	render() {
-		const { game_type, player_one, player_two } = this.state;
+		const { game_type, player_one, player_two, final_score } = this.state;
 
 		return (
 			<div className="new-score-container">
 				<div className="new-score-form">
-					<h3 className="new-score-title">Create a Score!</h3>
+					<h3 className="new-score-title">Create a Scoreboard!</h3>
 
 					<form onSubmit={this.handleSubmit}>
 						<label className="score-field">Game Type: </label>
@@ -63,6 +65,14 @@ class ScoreForm extends React.Component {
 							type="text"
 							value={player_two}
 							onChange={this.update('player_two')}
+							className="score-field"
+						/>
+
+						<label className="score-field">Game up to: </label>
+						<input
+							type="text"
+							value={final_score}
+							onChange={this.update('final_score')}
 							className="score-field"
 						/>
 

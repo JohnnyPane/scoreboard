@@ -8,12 +8,12 @@ export const receiveScores = scores => ({
 	scores
 });
 
-export const receiveScore = ({ score }) => ({
+export const receiveScore = score => ({
 	type: RECEIVE_SCORE,
 	score
 });
 
-export const createScore = score => dispatch (
+export const createScore = score => dispatch => (
 	APIUtil.createScore(score).then(score => (
 		dispatch(receiveScore(score))
 	))

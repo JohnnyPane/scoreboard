@@ -17,6 +17,8 @@ export const createScore = scoreForm => {
 	return $.ajax({
 		method: 'POST',
 		url: '/api/scores',
-		data: scoreForm
+		data: scoreForm,
+		contentType: false,
+		processData: false
 	})
 };
