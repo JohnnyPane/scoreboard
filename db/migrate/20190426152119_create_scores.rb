@@ -4,6 +4,7 @@ class CreateScores < ActiveRecord::Migration[5.2]
     	t.string :game_type, null: false
     	t.string :player_one
     	t.string :player_two
+        t.integer :final_score, null: false
     	t.integer :author_id, null: false
 
     	t.timestamps

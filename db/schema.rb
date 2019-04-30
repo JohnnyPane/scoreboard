@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_04_26_152119) do
     t.string "game_type", null: false
     t.string "player_one"
     t.string "player_two"
+    t.integer "final_score", null: false
     t.integer "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

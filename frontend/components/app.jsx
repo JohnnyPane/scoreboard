@@ -13,19 +13,20 @@ import SignupFormContainer from './session_forms/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HomeContainer from './home/home_container';
 import ScoreFormContainer from './score_form/score_form_container';
-import MainScore from './main_score/main_score';
+import MainScoreContainer from './main_score/main_score_container';
 
 const App = () => (
 	<div>
 		<header>
-			<h1>NO COLLUSION!!</h1>
+			<h1>NO COLLUSION!!!!!!!!!!</h1>
 			<GreetingContainer />
 		</header>
-
-  	<AuthRoute exact path="/login" component={LoginFormContainer} />
-  	<AuthRoute exact path="/signup" component={SignupFormContainer} />
-  	<Route exact path="/scores/new" component={ScoreFormContainer} />
-  	<ProtectedRoute exact path="/" component={ScoreFormContainer} />
+		<Switch>
+	  	<AuthRoute exact path="/login" component={LoginFormContainer} />
+	  	<AuthRoute exact path="/signup" component={SignupFormContainer} />
+	  	<ProtectedRoute path="/scores/:scoreId" component={MainScoreContainer} />
+	  	<ProtectedRoute exact path="/" component={HomeContainer} />
+	  </Switch>
 	</div>
 );
 

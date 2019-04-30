@@ -15,7 +15,7 @@ class ScoreForm extends React.Component {
 	}
 
 	navigateToScoreboard() {
-		this.props.history.push('/');
+		this.props.history.push(`/scores`);
 	}
 
 	update(property) {
@@ -31,9 +31,10 @@ class ScoreForm extends React.Component {
 		formData.append('score[player_one]', this.state.player_one);
 		formData.append('score[player_two]', this.state.player_two);
 		formData.append('score[final_score]', this.state.final_score);
+		const scoreId = parseInt(this.props.match.params.scoreId);
 		this.props.createScore(formData);
 		this.navigateToScoreboard();
-	}
+	};
 
 	render() {
 		const { game_type, player_one, player_two, final_score } = this.state;

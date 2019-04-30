@@ -17,13 +17,13 @@ class Api::ScoresController < ApplicationController
 	end
 
 	def index
-		@score = Score.all
+		@scores = Score.all
 		render :index
 	end
 
 	private 
 
 	def score_params
-		params.require(:score).permit(:game_type, :player_one, :player_two, :author_id)
+		params.require(:score).permit(:game_type, :player_one, :player_two, :author_id, :final_score)
 	end
 end 

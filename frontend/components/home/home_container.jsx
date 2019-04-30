@@ -1,18 +1,20 @@
+import React from 'react';
 import { connect } from 'react-redux';
+import ScoreIndex from './score_index';
+import { fetchScores } from '../../actions/score_actions';
+import { asArray } from '../../reducers/selectors';
+import Home from './home';
 
-import { selectAllScores } from '../../reducers/selectors';
-import Home from './score_index';
-import { requestScores } from '../../actions/score_actions';
 
 const mapStateToProps = state => ({
-	scores: selectAllScores(state)
+	scores: Object.keys(state.entities.scores).map(key => state.entities.scores[key])
 });
 
-const mapDispatchToProps = dispatch => ({
-	requestScores: () => dispatch(requestScores())
+const mapDispatchToProps = (dispatch) => ({
+	fetchScores: () => dispatch(fetchScores())
 });
 
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(Home);
+)(ScoreIndex);

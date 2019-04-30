@@ -1,3 +1,4 @@
+
 json.array! @scores do |score|
-	json.partial! 'api/scoreboards/score', score: score
+		json.partial! 'score', score: score
 end

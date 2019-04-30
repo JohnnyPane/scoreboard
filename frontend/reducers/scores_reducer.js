@@ -9,9 +9,9 @@ const scoresReducer = (state = {}, action) => {
 	Object.freeze(state);
 	switch(action.type) {
 		case RECEIVE_SCORES:
-			return action.scores;
+			return action.scores
 		case RECEIVE_SCORE:
-			const newScore = { [action.score.id]: action.score }
+			const newScore = { [action.score.id]: action.score };
 			return merge({}, state, newScore);
 		default:
 			return state;

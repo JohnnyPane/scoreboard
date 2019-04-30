@@ -11,26 +11,30 @@ Score.create!(
 	game_type: 'Ping Pong',
 	player_one: 'Coleman',
 	player_two: 'JP',
-	author_id: 1
+	author_id: 1,
+	final_score: 100
 );
 
 Score.create!(
 	game_type: 'Ping Pong',
 	player_one: 'Coleman',
 	player_two: 'JP',
-	author_id: 1
+	author_id: 1,
+	final_score: 23
 );
 
 Score.create!(
 	game_type: 'Ping Pong',
 	player_one: 'Coleman',
 	player_two: 'JP',
-	author_id: 1
+	author_id: 1,
+	final_score: 87
 );
 
 Score.create!(
 	game_type: 'Ping Pong',
 	player_one: 'Coleman',
 	player_two: 'JP',
-	author_id: 1
+	author_id: 1,
+	final_score: 45
 );

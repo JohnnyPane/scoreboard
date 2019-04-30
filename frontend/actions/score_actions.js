@@ -25,8 +25,9 @@ export const fetchScore = id => dispatch => (
 	))
 );
 
-export const requestScores = () => dispatch => (
+export const fetchScores = () => dispatch => (
 	APIUtil.fetchScores().then(scores => (
 		dispatch(receiveScores(scores))
 	))
 );
+
