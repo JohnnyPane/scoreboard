@@ -14,6 +14,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HomeContainer from './home/home_container';
 import ScoreFormContainer from './score_form/score_form_container';
 import MainScoreContainer from './main_score/main_score_container';
+import BoardContainer from './board/board_container';
 
 const App = () => (
 	<div>
@@ -25,6 +26,7 @@ const App = () => (
 	  	<AuthRoute exact path="/login" component={LoginFormContainer} />
 	  	<AuthRoute exact path="/signup" component={SignupFormContainer} />
 	  	<ProtectedRoute path="/scores/new" component={ScoreFormContainer} />
+	  	<ProtectedRoute path="/scores/:scoreId" component={BoardContainer} />
 	  	<ProtectedRoute exact path="/" component={HomeContainer} />
 	  </Switch>
 	</div>

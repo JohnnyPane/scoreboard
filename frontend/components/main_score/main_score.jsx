@@ -17,20 +17,19 @@ class MainScore extends React.Component {
 
 	render() {
 		const { scores } = this.props;
-		console.log(scores);
 		return (
 			<div>
 				<div className="new-board-btn">
-					<button onClick={this.handleClick}>Create New Scoreboard!</button>
+					<button onClick={this.handleClick}>Create Custom Scoreboard!</button>
 				</div>
 				<div id="main-scoreboard" >
-					<h3>{scores.game_type}</h3>
+					<h3>Quick Game!</h3>
 					<br/>
 					<PlayerOneScore />
 					<PlayerTwoScore />
 					<div className="player-names">
-						<h4>{scores.player1}</h4>
-						<h4>{scores.player2}</h4>
+						<h4>Player One</h4>
+						<h4>Player Two</h4>
 					</div>
 					<span className="final-score">{scores.final_score}</span>
 				</div>

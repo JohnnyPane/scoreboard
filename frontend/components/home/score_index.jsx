@@ -5,10 +5,10 @@ import ScoreIndexItem from './score_index_item';
 const ScoreIndex = ({ scores, fetchScores }) => (
 	<div>
 		<h1>Scores: </h1>
-		{scores.map(score => (
+		{scores.map((score, i) => (
 			<ScoreIndexItem
 				score={score}
-				key={score.id}
+				key={i}
 				fetchScores={fetchScores}
 			/>
 		))}
