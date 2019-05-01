@@ -3,20 +3,18 @@ import MainScore from '../main_score/main_score';
 import ScoreIndex from './score_index';
 
 
-class Home extends React.Component {
-	constructor(props) {
-		super(props)
-	}
-	
-	render() {
-		return (
-			<section>
-				<div className="scoreboarded">
-					<ScoreIndex />
-				</div>
-			</section>
-		);
-	}
-}
+const Home = ({ scores, fetchScores, fetchScore }) => (
+	<div className="user-pane">
+		<div className="top-score">
+			<h5>Game on!</h5>
+			<MainScore 
+				scores={scores}
+				fetchScore={fetchScore} />
+		</div>
+		<div className="previous-scores-list">
+			<ScoreIndex scores={scores} fetchScores={fetchScores} />
+		</div>
+	</div>
+);
 
 export default Home;

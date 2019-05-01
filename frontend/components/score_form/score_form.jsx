@@ -15,7 +15,7 @@ class ScoreForm extends React.Component {
 	}
 
 	navigateToScoreboard() {
-		this.props.history.push(`/scores`);
+		this.props.history.push(`/`);
 	}
 
 	update(property) {

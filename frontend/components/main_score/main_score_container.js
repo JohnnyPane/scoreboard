@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-	fetchScore: id => dispatch(fetchScore(id))
+	fetchScore: id => dispatch(fetchScore(id)),
 });
 
 

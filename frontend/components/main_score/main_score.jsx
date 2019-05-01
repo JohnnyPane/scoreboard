@@ -5,15 +5,24 @@ import PlayerOneScore from './player1';
 import PlayerTwoScore from './player2';
 
 class MainScore extends React.Component {
-
 	constructor(props) {
 		super(props);
+		this.handleClick = this.handleClick.bind(this);
+	}
+
+	handleClick(e) {
+		e.preventDefault();
+		this.props.history.push('/scores/new');
 	}
 
 	render() {
 		const { scores } = this.props;
+		console.log(scores);
 		return (
 			<div>
+				<div className="new-board-btn">
+					<button onClick={this.handleClick}>Create New Scoreboard!</button>
+				</div>
 				<div id="main-scoreboard" >
 					<h3>{scores.game_type}</h3>
 					<br/>

@@ -4,11 +4,7 @@ import { withRouter } from 'react-router-dom';
 class ScoreIndexItem extends React.Component {	
 	constructor(props) {
 		super(props);
-	}
-
-	componentDidMount() {
-		console.log(this.props);
-	}
+	} 
 
 	render() {
 		const { game_type, player_one, player_two, final_score } = this.props.score;
