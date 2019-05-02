@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
+
 
 class ScoreForm extends React.Component {
 	constructor(props) {
@@ -86,6 +88,7 @@ class ScoreForm extends React.Component {
               />
             </div>
           </form>
+          <Link to="/">Back to Scores Index</Link>
         </div>
       </div>
 		);
