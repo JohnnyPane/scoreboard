@@ -9,7 +9,8 @@ const Home = ({ scores, fetchScores, fetchScore }) => (
 			<h5>Game on!</h5>
 			<MainScore 
 				scores={scores}
-				fetchScore={fetchScore} />
+				fetchScore={fetchScore}
+				fetchScores={fetchScores} />
 		</div>
 		<div className="previous-scores-list">
 			<ScoreIndex scores={scores} fetchScores={fetchScores} />

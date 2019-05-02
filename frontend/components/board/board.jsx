@@ -12,7 +12,7 @@ const Board = ({ score, scoreId, fetchScore }) => {
 		<div className="single-board-show">
 			<div className="single-board-display">
 				<Link to="/">Back to Scores Index</Link>
-				<BoardItem score={score} fetchScore={fetchScore} />
+				<BoardItem score={score} fetchScore={fetchScore} scoreId={scoreId} />
 			</div>
 		</div>
 	);
