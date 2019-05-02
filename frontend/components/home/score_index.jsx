@@ -15,7 +15,7 @@ class ScoreIndex extends React.Component {
 				<div>
 					<h1>Click on a score to go to it's scoreboard</h1>
 					<ul>
-						{scores.map((score, i) => ( 
+						{scores.reverse().map((score) => ( 
 							<ScoreIndexItem
 								key={score.id} 
 								score={score}
