@@ -11,8 +11,13 @@ class Api::StandingsController < ApplicationController
 		end
 	end
 
+	def index
+		@standings = Standing.all.where(author_id: current_user.id)
+		render :index
+	end
+
 	def show
-		@standing = Standing.find_by(params[:author_id])
+		@standing = Standing.find_by(params[:id])
 		render :show
 	end
 

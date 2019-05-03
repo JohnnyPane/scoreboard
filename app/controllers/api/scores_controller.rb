@@ -17,7 +17,7 @@ class Api::ScoresController < ApplicationController
 	end
 
 	def index
-		@scores = Score.all
+		@scores = Score.all.where(author_id: current_user.id)
 		render :index
 	end
 

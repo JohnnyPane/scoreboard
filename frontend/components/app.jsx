@@ -15,6 +15,7 @@ import HomeContainer from './home/home_container';
 import ScoreFormContainer from './score_form/score_form_container';
 import MainScoreContainer from './main_score/main_score_container';
 import BoardContainer from './board/board_container';
+import StandingContainer from './standings/standings_container';
 
 const App = () => (
 	<div>
@@ -29,6 +30,7 @@ const App = () => (
 	  	<ProtectedRoute path="/scores/:scoreId" component={BoardContainer} />
 	  	<ProtectedRoute exact path="/" component={HomeContainer} />
 	  </Switch>
+	  <StandingContainer />
 	</div>
 );
 

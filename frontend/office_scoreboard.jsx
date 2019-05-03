@@ -5,13 +5,10 @@ import configureStore from './store/store';
 
 import { login } from './actions/session_actions';
 
-import { fetchScores, fetchScore } from './actions/score_actions';
+import { fetchStandings, fetchStanding } from './actions/standing_actions';
 
 
-	// window.fetchScores = fetchScores;
-	// window.getState = store.getState;
-	// window.dispatch = store.dispatch;
-	// window.fetchScore = fetchScore;
+
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -27,6 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
+  window.fetchStandings = fetchStandings;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.fetchStanding = fetchStanding;
+
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });
