@@ -20,7 +20,7 @@ class ScoreIndex extends React.Component {
 								key={score.id} 
 								score={score}
 								fetchScores={fetchScores}
-								fetchScore={fetchScore} /> 
+							 /> 
 								)
 							)
 						}

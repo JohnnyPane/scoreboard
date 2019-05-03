@@ -38,3 +38,21 @@ Score.create!(
 	author_id: 1,
 	final_score: 45
 );
+
+Standing.create!(
+	player_one: 'Genghis',
+	player_two: 'Attila',
+	game_type: 'War',
+	player_one_wins: 9,
+	player_two_wins: 7,
+	author_id: 1
+);
+
+Standing.create!(
+	player_one: 'Genghis',
+	player_two: 'Attila',
+	game_type: 'War',
+	player_one_wins: 13,
+	player_two_wins: 11,
+	author_id: 1
+);
