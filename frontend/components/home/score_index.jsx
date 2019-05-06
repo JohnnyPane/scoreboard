@@ -11,6 +11,7 @@ class ScoreIndex extends React.Component {
 
 	componentDidMount() {
 		this.props.fetchScores();
+
 	}
 
 	handleClick(e) {

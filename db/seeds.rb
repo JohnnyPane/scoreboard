@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Score.delete_all
+Score.delete_all;
+Standing.delete_all;
 
 Score.create!(
 	game_type: 'Ping Pong',
@@ -51,8 +52,17 @@ Standing.create!(
 Standing.create!(
 	player_one: 'Genghis',
 	player_two: 'Attila',
-	game_type: 'War',
+	game_type: 'Battle',
 	player_one_wins: 13,
 	player_two_wins: 11,
 	author_id: 1
+);
+
+Standing.create!(
+	player_one: 'Jon Snow',
+	player_two: 'Night King',
+	game_type: 'Chess',
+	player_one_wins: 3,
+	player_two_wins: 3,
+	author_id: 4
 );
