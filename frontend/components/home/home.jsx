@@ -5,13 +5,6 @@ import ScoreIndex from './score_index';
 
 const Home = ({ scores, fetchScores, fetchScore }) => (
 	<div className="user-pane">
-		<div className="top-score">
-			<h5>Game on!</h5>
-			<MainScore 
-				scores={scores}
-				fetchScore={fetchScore}
-				fetchScores={fetchScores} />
-		</div>
 		<div className="previous-scores-list">
 			<ScoreIndex scores={scores} fetchScores={fetchScores} />
 		</div>
@@ -19,3 +12,8 @@ const Home = ({ scores, fetchScores, fetchScore }) => (
 );
 
 export default Home;
+
+// <MainScore 
+// scores={scores}
+// fetchScore={fetchScore}
+// fetchScores={fetchScores} />

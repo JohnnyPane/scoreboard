@@ -6,8 +6,10 @@ import BoardItem from './board_item';
 const Board = ({ score, scoreId, fetchScore }) => {
 	return(
 		<div className="single-board-show">
-			<div className="single-board-display">
+			<div className="index-redirect">
 				<Link to="/">Back to Scores Index</Link>
+			</div>
+			<div className="single-board-display">
 				<BoardItem score={score}  />
 			</div>
 		</div>

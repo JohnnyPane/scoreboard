@@ -7,7 +7,7 @@ const BoardItem = ({ score }) => {
 	return (
 		<div>
 			<div id="main-scoreboard" >
-				<h3>{score.game_type}</h3>
+				<h3>{score.game_type.toUpperCase()}</h3>
 				<br/>
 				<PlayerOneScore score={score} />
 				<PlayerTwoScore score={score} />
@@ -15,7 +15,7 @@ const BoardItem = ({ score }) => {
 					<h4>{score.player_one}</h4>
 					<h4>{score.player_two}</h4>
 				</div>
-				<span className="final-score">{score.final_score}</span>
+				<span className="final-score">First to: {score.final_score}</span>
 			</div>
 		</div>
 	)

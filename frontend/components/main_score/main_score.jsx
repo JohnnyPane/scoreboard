@@ -24,7 +24,7 @@ class MainScore extends React.Component {
 				</div>
 				<div id="main-scoreboard" >
 					<h3>Quick Game!</h3>
-					<br/>
+					<br />
 					<PlayerOneScore />
 					<PlayerTwoScore />
 					<div className="player-names">

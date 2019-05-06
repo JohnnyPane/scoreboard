@@ -35,3 +35,5 @@ const App = () => (
 );
 
 export default App;
+
+// <ProtectedRoute path="/standings" component={StandingContainer} />

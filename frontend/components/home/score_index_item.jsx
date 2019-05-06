@@ -19,8 +19,7 @@ class ScoreIndexItem extends React.Component {
 					 onClick={this.handleClick} >
 				<li>
 					<h4>Game Type: {game_type}</h4>
-					<p>player one: {player_one}</p>
-					<p>player two: {player_two}</p>
+					<p>{player_one} vs. {player_two}</p>
 					<p>final score: {final_score}</p>
 				</li>
 			</div>

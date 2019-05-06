@@ -4,6 +4,10 @@ import Standings from './standings';
 import { createStanding,fetchStanding, fetchStandings } from '../../actions/standing_actions';
 import { selectScore } from '../../reducers/selectors';
 
+const mapStateToProps = state => ({
+	standings: Object.keys(state.entities.standings).map(key => state.entities.standings[key])
+});
+
 
 const mapDispatchToProps = dispatch => ({
 	createStanding: standing => dispatch(createStanding(standing)),

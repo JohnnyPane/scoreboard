@@ -13,19 +13,73 @@
  *= require_tree .
  *= require_self
  */
+html,
+body,
+ul,
+p,
+h3,
+h4,
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
 
- 
+html, body, #content {
+  min-height: 100%;
+}
+
+body {
+	font-family: 'Slabo 27px', serif;
+}
+
+li {
+  list-style: none;
+}
+
+.login-form-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+}
+
+.login-form {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.login-input {
+	margin-left: 20px;
+}
+
+.login-form-box {
+	outline: 1px solid #076652;
+	padding: 20px;
+}
+
+nav.login-signup {
+	display: flex;
+	align-items: center;
+	padding-right: 50px;
+	font-size: 18px;
+}
+
 #main-scoreboard {
 	height: 400px;
 	width: 600px;
 	border: 1px solid green;
 	margin: 0 auto;
+	border-radius: 10px;
+	color: green;
 }
 
 #main-scoreboard > h3 {
+	font-size: 36px;
 	text-align: center;
 	margin: 0 auto;
 	align-items: center;
+	border-bottom: 1px solid green;
 }
 
 /*.player-names {
@@ -36,7 +90,14 @@
 header {
 	display: flex;
 	justify-content: space-between;
-	margin-left: 20px;
+	border-bottom: 1px solid #076652;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+header > h1 {
+	margin-left: 50px;
+
 }
 
 hgroup {
@@ -44,6 +105,31 @@ hgroup {
 	justify-content: space-between;
 	margin-left: 20px; 
 	align-items: center;
+}
+
+.score-index > h1 {
+	text-align: center;
+}
+
+.score-index-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 5px 10px #076652;
+}
+
+.score-index-item {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: flex;
+	width: 50%;
+	box-shadow: 0px 0px 3px black;
+	text-align: left;
+	padding: 10px;
+}
+
+.score-index-item > li > h4 {
+	font-size: 24px;
 }
 
 .header-name {
@@ -63,20 +149,61 @@ hgroup {
 	justify-content: space-between;
 }*/
 
+.index-redirect {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 100px;
+}
+
+.index-redirect > a {
+	text-decoration: none;
+	font-size: 20px;
+}
+
 .player-score {
+	width: 50%;
 	text-align: center;
 	float: left;
 	justify-content: space-between;
-	margin-left: 50px;
-	margin-right: 50px;
-	margin-bottom: 50px;
+
+}
+
+#scorekeep {
+	display: inline-block;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	font-size: 112px;
+	font-weight: 400;
+	padding-left: 100px;
+	padding-right: 100px;
+	border: 1px solid green;
+	border-radius: 10px;
 }
 
 .player-score > button {
-	margin: 3px;
+  margin: 7px;
+  border: 1px solid green;
+  padding: 10px;
+  border-radius: 10px;
+  background: white;
+  color: green;
+  font-weight: 700;
 }
 
-.player-names {
-	
+.player-score > button:hover {
+	background: green;
+	color: white;
+}
+
+.player-names > h4 {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    font-size: 26px;
+}
+
+.final-score {
+	text-align: center;
+	font-size: 24;
 }
 

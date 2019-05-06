@@ -1,4 +1,5 @@
 import React from 'react';
+import StandingItem from './standings_item';
 
 class Standing extends React.Component {
 	constructor(props) {
@@ -6,8 +7,8 @@ class Standing extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log(this.props)
-		this.props.fetchStandings();
+		this.props.fetchStandings().then(() => (
+		console.log(this.props.standings)));
 	}
 
 	render() {
@@ -16,3 +17,17 @@ class Standing extends React.Component {
 };
 
 export default Standing;
+
+		// 	<div className="standings-div">
+		// 		<ul>
+		// 			{standings.reverse().map(standing => (
+		// 				<StandingItem
+		// 					key={standing.id}
+		// 					standing={standing}
+		// 					fetchStandings={fetchStandings}
+		// 				/>
+		// 				)
+		// 			)
+		// 		}
+		// 	</ul>
+		// </div>

@@ -25,7 +25,7 @@ class PlayerOneScore extends React.Component {
 		return (
 			<div className="score-wrapper">
 				<div className="player-score">
-					<h1>{this.state.count}</h1>
+					<h1 id="scorekeep">{this.state.count}</h1>
 					<br/>
 					<button onClick={() => this.setState({ count: this.state.count + 1})}>+1</button>
 					<button onClick={() => this.setState({ count: this.state.count + 3})}>+3</button>
