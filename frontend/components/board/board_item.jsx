@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import PlayerOneScore from './player1';
-import PlayerTwoScore from './player2';
+
 
 const BoardItem = ({ score }) => {
 	return (
@@ -10,7 +10,6 @@ const BoardItem = ({ score }) => {
 				<h3>{score.game_type.toUpperCase()}</h3>
 				<br/>
 				<PlayerOneScore score={score} />
-				<PlayerTwoScore score={score} />
 				<div className="player-names">
 					<h4>{score.player_one}</h4>
 					<h4>{score.player_two}</h4>
