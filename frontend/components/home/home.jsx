@@ -13,7 +13,3 @@ const Home = ({ scores, fetchScores, fetchScore }) => (
 
 export default Home;
 
-// <MainScore 
-// scores={scores}
-// fetchScore={fetchScore}
-// fetchScores={fetchScores} />

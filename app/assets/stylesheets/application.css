@@ -193,6 +193,7 @@ hgroup {
 .player-score > button:hover {
 	background: green;
 	color: white;
+	cursor: pointer;
 }
 
 .player-names > h4 {

@@ -8,10 +8,8 @@ class ScoreIndex extends React.Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
-
 	componentDidMount() {
 		this.props.fetchScores();
-
 	}
 
 	handleClick(e) {
@@ -20,7 +18,7 @@ class ScoreIndex extends React.Component {
 	}
 
 	render() {
-		const { scores, fetchScores } = this.props;
+		const { scores } = this.props;
 		return (
 				<div className="score-index">
 					<div className="new-board-btn">
@@ -32,7 +30,6 @@ class ScoreIndex extends React.Component {
 							<ScoreIndexItem
 								key={score.id} 
 								score={score}
-								fetchScores={fetchScores}
 							 /> 
 								)
 							)

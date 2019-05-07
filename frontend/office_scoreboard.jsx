@@ -7,7 +7,10 @@ import { login } from './actions/session_actions';
 
 import { fetchStandings, fetchStanding } from './actions/standing_actions';
 
-
+  // window.fetchStandings = fetchStandings;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.fetchStanding = fetchStanding;
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,10 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.fetchStandings = fetchStandings;
+
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchStanding = fetchStanding;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

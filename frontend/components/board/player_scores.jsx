@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-class PlayerOneScore extends React.Component {
+class PlayerScores extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -12,11 +12,16 @@ class PlayerOneScore extends React.Component {
 		this.submitScore = this.submitScore.bind(this);
 	}
 
+	componentDidMount() {
+		this.props.fetchStandings();
+	}
+
 	submitScore() {
 		this.props.history.push('/');
 	}
 
 	render() {
+		console.log(this.props);
 		const score = this.state.count;
 		const score2 = this.state.count2;
 		const final = this.props.score.final_score;
@@ -79,7 +84,5 @@ class PlayerOneScore extends React.Component {
 	}
 }
 
-export default withRouter(PlayerOneScore);
+export default withRouter(PlayerScores);
 
-
-// (final <= score || final <= score2) ? overDisplay() : boardDisplay();

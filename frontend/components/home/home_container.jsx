@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ScoreIndex from './score_index';
 import { fetchScores } from '../../actions/score_actions';
-import { asArray } from '../../reducers/selectors';
 import Home from './home';
 
 
