@@ -13,7 +13,9 @@ Score.create!(
 	player_one: 'Coleman',
 	player_two: 'JP',
 	author_id: 1,
-	final_score: 100
+	final_score: 100,
+	player_one_score: 100,
+	player_two_score: 97
 );
 
 Score.create!(
@@ -21,7 +23,9 @@ Score.create!(
 	player_one: 'Coleman',
 	player_two: 'JP',
 	author_id: 1,
-	final_score: 23
+	final_score: 23,
+	player_one_score: 23,
+	player_two_score: 21
 );
 
 Score.create!(
@@ -29,7 +33,9 @@ Score.create!(
 	player_one: 'Coleman',
 	player_two: 'JP',
 	author_id: 1,
-	final_score: 87
+	final_score: 87,
+	player_one_score: 77,
+	player_two_score: 87
 );
 
 Score.create!(
@@ -37,32 +43,8 @@ Score.create!(
 	player_one: 'Coleman',
 	player_two: 'JP',
 	author_id: 1,
-	final_score: 45
+	final_score: 45,
+	player_one_score: 45,
+	player_two_score: 37
 );
 
-Standing.create!(
-	player_one: 'Genghis',
-	player_two: 'Attila',
-	game_type: 'War',
-	player_one_wins: 9,
-	player_two_wins: 7,
-	author_id: 1
-);
-
-Standing.create!(
-	player_one: 'Genghis',
-	player_two: 'Attila',
-	game_type: 'Battle',
-	player_one_wins: 13,
-	player_two_wins: 11,
-	author_id: 1
-);
-
-Standing.create!(
-	player_one: 'Jon Snow',
-	player_two: 'Night King',
-	game_type: 'Chess',
-	player_one_wins: 3,
-	player_two_wins: 3,
-	author_id: 4
-);

@@ -19,6 +19,12 @@ export const createScore = score => dispatch => (
 	))
 );
 
+export const updateScore = score => dispatch => (
+	APIUtil.updateScore(score).then(score => (
+		dispatch(receiveScore(score))
+	))
+);
+
 export const fetchScore = id => dispatch => (
 	APIUtil.fetchScore(id).then(payload => (
 		dispatch(receiveScore(payload))

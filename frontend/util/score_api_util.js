@@ -22,3 +22,21 @@ export const createScore = scoreForm => {
 		processData: false
 	})
 };
+
+export const updateScore = score => {
+	return $.ajax({
+		method: 'PATCH',
+		url: `/api/scores/${score.id}`,
+		data: { score }
+	})
+};
+
+// export const updateScore = (score, scoreForm) => {
+// 	return $.ajax({
+// 		method: 'PATCH',
+// 		url: `/api/scores/${score.id}`,
+// 		data: { score },
+// 		contentType: false,
+// 		processData: false
+// 	})
+// };

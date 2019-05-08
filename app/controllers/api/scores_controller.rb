@@ -12,7 +12,7 @@ class Api::ScoresController < ApplicationController
 	end
 
 	def show
-		@score = Score.find_by(params[:id])
+		@score = Score.find(params[:id])
 		render :show
 	end
 
@@ -21,9 +21,18 @@ class Api::ScoresController < ApplicationController
 		render :index
 	end
 
+	def update
+		@score = Score.find(params[:id])
+		if @score.update(score_params)
+			render :show
+		else
+			render @score.errors.full_messages, status: 401
+		end
+	end
+
 	private 
 
 	def score_params
-		params.require(:score).permit(:game_type, :player_one, :player_two, :author_id, :final_score)
+		params.require(:score).permit(:game_type, :player_one, :player_two, :author_id, :final_score, :player_one_score, :player_two_score)
 	end
 end 

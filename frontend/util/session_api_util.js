@@ -20,3 +20,17 @@ export const logout = () => (
 		url: '/api/session'
 	})
 );
+
+// export const createAPI = (modelName) => {
+
+// 	return {
+// 		get: $.ajax({
+// 			method: 'DELETE',
+// 			url: '/api/' + modelName,
+// 		}),
+// 		index: (),
+// 		destroy,
+// 		update
+// 		create
+// 	}
+// }

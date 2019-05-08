@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { fetchScore } from '../../actions/score_actions';
+import { fetchScore, updateScore } from '../../actions/score_actions';
 import { fetchStandings } from '../../actions/standing_actions';
 import { selectScore } from '../../reducers/selectors';
 import Board from './board';
@@ -17,7 +17,8 @@ const mapStateToProps = (state, { match }) => {
 
 const mapDispatchToProps = dispatch => ({
 	fetchScore: id => dispatch(fetchScore(id)),
-	fetchStandings: () => dispatch(fetchStandings())
+	fetchStandings: () => dispatch(fetchStandings()),
+	updateScore: score => dispatch(updateScore(score))
 });
 
 export default connect(
