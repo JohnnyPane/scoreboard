@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
 import Standings from './standings';
-import { createStanding,fetchStanding, fetchStandings } from '../../actions/standing_actions';
-import { selectScore } from '../../reducers/selectors';
+import { fetchScores} from '../../actions/score_actions';
+import { fetchStandings } from '../../actions/standing_actions';
 
 const mapStateToProps = state => ({
 	standings: Object.keys(state.entities.standings).map(key => state.entities.standings[key])
@@ -10,9 +10,8 @@ const mapStateToProps = state => ({
 
 
 const mapDispatchToProps = dispatch => ({
-	createStanding: standing => dispatch(createStanding(standing)),
-	fetchStandings: standings => dispatch(fetchStandings(standings)),
-	fetchStanding: standing => dispatch(fetchStanding(standing))
+	fetchScores: () => dispatch(fetchScores()),
+	fetchStandings: () => dispatch(fetchStandings())
 });
 
 export default connect(

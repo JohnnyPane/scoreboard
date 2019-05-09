@@ -13,12 +13,6 @@ export const receiveStanding = standing => ({
 	standing
 });
 
-export const createStanding = standing => dispatch => (
-	APIUtil.createStanding(standing).then(standing => (
-		dispatch(receiveStanding(standing))
-	))	
-);
-
 export const fetchStandings = () => dispatch => (
 	APIUtil.fetchStandings().then(standings => (
 		dispatch(receiveStandings(standings))

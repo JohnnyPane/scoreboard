@@ -12,11 +12,3 @@ export const fetchStanding = id => {
 		url: `api/standings/${id}`
 	})
 };
-
-export const createStanding = standing => {
-	return $.ajax({
-		method: 'POST',
-		url: '/api/standings',
-		data: { standing }
-	})
-};

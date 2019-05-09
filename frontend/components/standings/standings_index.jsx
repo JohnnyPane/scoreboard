@@ -10,6 +10,7 @@ class StandingIndex extends React.Component {
 
 	componentDidMount() {
 		this.props.fetchStandings();
+		console.log(this.props);
 	}
 
 	render() {
@@ -19,9 +20,9 @@ class StandingIndex extends React.Component {
 				<Link to="/">Back to scores</Link>
 				<h1>Head to Head Standings</h1>
 				<ul className="standings-index-list">
-					{standings.map((standing) => (
+					{standings.map((standing, i) => (
 						<StandingIndexItem
-							key={standing.id}
+							key={i}
 							standing={standing}
 							fetchStandings={fetchStandings}
 						/>
