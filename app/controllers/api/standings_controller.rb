@@ -2,8 +2,7 @@ class Api::StandingsController < ApplicationController
 	before_action :require_logged_in
 
 	def index
-		@scores = Score.all.where(author_id: current_user.id)
-		@titles = @scores.pluck(:game_type, :player_one, :player_two).uniq
+		@standings = Score.where(author_id: current_user).head_to_head_player_standings
 		render :index
 	end
 
@@ -18,8 +17,4 @@ class Api::StandingsController < ApplicationController
 			:game_type
 		)
 	end
-
 end
-
-# titles = scores.pluck(:game_type, :player_one, :player_two)
-# @standings_tables = titles.uniq

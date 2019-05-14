@@ -20,7 +20,7 @@ class StandingIndex extends React.Component {
 				<Link to="/">Back to scores</Link>
 				<h1>Head to Head Standings</h1>
 				<ul className="standings-index-list">
-					{standings.map((standing, i) => (
+					{standings.reverse().map((standing, i) => (
 						<StandingIndexItem
 							key={i}
 							standing={standing}
