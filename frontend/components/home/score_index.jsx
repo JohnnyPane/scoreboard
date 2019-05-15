@@ -21,14 +21,15 @@ class ScoreIndex extends React.Component {
 		const { scores } = this.props;
 		return (
 				<div className="score-index">
+					<h1>Click on a score to go to it's scoreboard</h1>
+					<h3>or click below to</h3>
 					<div className="new-board-btn">
 						<button onClick={this.handleClick}>Create Custom Scoreboard!</button>
 					</div>
-					<h1>Click on a score to go to it's scoreboard</h1>
 					<ul className="score-index-list">
-						{scores.reverse().map((score) => ( 
+						{scores.reverse().map((score, i) => ( 
 							<ScoreIndexItem
-								key={score.id} 
+								key={i} 
 								score={score}
 							 /> 
 								)

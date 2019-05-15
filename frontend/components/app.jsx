@@ -20,7 +20,7 @@ import StandingContainer from './standings/standings_container';
 const App = () => (
 	<div>
 		<header>
-			<h1>NO COLLUSION!!!!!!!!!!</h1>
+			<h1>Office Scoreboard</h1>
 			<GreetingContainer />
 		</header>
 		<Switch>

@@ -42,16 +42,3 @@ class Score < ApplicationRecord
 		player_one_score > player_two_score ? player_one : player_two
 	end
 end
-
-IDEAL = {
-	player_one: nil,
-	player_two: nil,
-	player_one_score: nil,
-	player_two_score: nil,
-	game_type: nil,
-	date: nil,
-}
-
-standings = [
-	{ game_type: nil, data: [{ player: nil, wins: nil, loses: nil }]}
-]

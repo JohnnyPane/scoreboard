@@ -10,7 +10,6 @@ class StandingIndex extends React.Component {
 
 	componentDidMount() {
 		this.props.fetchStandings();
-		console.log(this.props);
 	}
 
 	render() {

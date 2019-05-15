@@ -14,7 +14,7 @@ class PlayerScores extends React.Component {
 	}
 
 	submitScore() {
-		this.props.history.push('/');
+		this.props.history.push('/standings');
 	}
 
 	addScores(e) {

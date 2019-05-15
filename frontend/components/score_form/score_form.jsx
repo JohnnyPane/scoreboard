@@ -42,54 +42,54 @@ class ScoreForm extends React.Component {
 
 		return (
 			<div className="new-score-container">
-				<div className="new-score-form">
-					<h3 className="new-score-title">Create a Scoreboard!</h3>
+			  <Link to="/">Back to Scores Index</Link>
+			  <div className="new-score-form-container">
+					<div className="new-score-form">
+						<h3 className="new-score-title">Create a Scoreboard!</h3>
+						<br />
+						<form onSubmit={this.handleSubmit}>
+							<label className="score-field">Game Type: </label>
+							<input
+								type="text"
+								value={game_type}
+								onChange={this.update('game_type')}
+								className="score-field"
+							/>
 
-					<form onSubmit={this.handleSubmit}>
-						<label className="score-field">Game Type: </label>
-						<input
-							type="text"
-							value={game_type}
-							onChange={this.update('game_type')}
-							className="score-field"
-						/>
+							<label className="score-field">Player One: </label>
+							<input
+								type="text"
+								value={player_one}
+								onChange={this.update('player_one')}
+								className="score-field"
+							/>
 
-						<label className="score-field">Player One: </label>
-						<input
-							type="text"
-							value={player_one}
-							onChange={this.update('player_one')}
-							className="score-field"
-						/>
+							<label className="score-field">Player Two: </label>
+							<input
+								type="text"
+								value={player_two}
+								onChange={this.update('player_two')}
+								className="score-field"
+							/>
 
-						<label className="score-field">Player Two: </label>
-						<input
-							type="text"
-							value={player_two}
-							onChange={this.update('player_two')}
-							className="score-field"
-						/>
+							<label className="score-field">Game up to: </label>
+							<input
+								type="text"
+								value={final_score}
+								onChange={this.update('final_score')}
+								className="score-field"
+							/>
 
-						<label className="score-field">Game up to: </label>
-						<input
-							type="text"
-							value={final_score}
-							onChange={this.update('final_score')}
-							className="score-field"
-						/>
-
-						<hr />
-
-						<div className="button-holder">
-              <input
-                type="submit"
-                value="Create Score"
-                className="new-score-button"
-              />
-            </div>
-          </form>
-          <Link to="/">Back to Scores Index</Link>
-        </div>
+							<div className="button-holder">
+		            <input
+		              type="submit"
+		              value="Create Score"
+		              className="new-score-button"
+		            />
+		          </div>
+		        </form>
+		      </div>
+		     </div>
       </div>
 		);
 	}
