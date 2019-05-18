@@ -11,7 +11,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => ({
 	fetchScores: () => dispatch(fetchScores()),
-	fetchScore: id => dispatch(fetchScore(id)),
 });
 
 export default connect(

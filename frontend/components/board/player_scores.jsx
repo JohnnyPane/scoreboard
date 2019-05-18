@@ -11,6 +11,11 @@ class PlayerScores extends React.Component {
 		};
 		this.submitScore = this.submitScore.bind(this);
 		this.addScores = this.addScores.bind(this);
+		this.props.fetchScore(this.props.scoreId);
+	}
+
+	componentDidMount() {
+		console.log(this.props);
 	}
 
 	submitScore() {

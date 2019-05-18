@@ -3,13 +3,13 @@ import { Link } from 'react-router';
 import PlayerScores from './player_scores';
 
 
-const BoardItem = ({ score, updateScore }) => {
+const BoardItem = ({ score, updateScore, fetchScore, scoreId }) => {
 	return (
 		<div>
 			<div id="main-scoreboard" >
 				<h3>{score.game_type.toUpperCase()}</h3>
 				<br/>
-				<PlayerScores score={score} updateScore={updateScore} />
+				<PlayerScores score={score} updateScore={updateScore} fetchScore={fetchScore} scoreId={scoreId} />
 				<div className="player-names">
 					<h4>{score.player_one}</h4>
 					<h4>{score.player_two}</h4>

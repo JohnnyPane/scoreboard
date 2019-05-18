@@ -22,9 +22,12 @@ class Score < ApplicationRecord
 					player_two_wins: scores.select { |score| score.winner.downcase == player_two }.length,
 				},
 				scores: {
-					player_one_points: scores.map { |score| score.player_one.downcase == player_one ? score.player_one_score : score.player_two_score }.reduce(:+),
-					player_two_points: scores.map { |score| score.player_two.downcase == player_two ? score.player_two_score : score.player_one_score }.reduce(:+),
-				}
+					player_one_total_points: scores.map { |score| score.player_one.downcase == player_one ? score.player_one_score : score.player_two_score }.reduce(:+),
+					player_two_total_points: scores.map { |score| score.player_two.downcase == player_two ? score.player_two_score : score.player_one_score }.reduce(:+),
+					player_one_points_collection: scores.map { |score| score.player_one.downcase == player_one ? score.player_one_score : score.player_two_score },
+					player_two_points_collection: scores.map { |score| score.player_two.downcase == player_two ? score.player_two_score : score.player_one_score }
+				},
+				date: scores
 			}
 		end
 	end

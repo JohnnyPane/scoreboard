@@ -1,4 +1,5 @@
 import React from 'react';
+import Chart from '../chart/chart';
 
 class StandingItem extends React.Component {
 	constructor(props) {
@@ -6,7 +7,7 @@ class StandingItem extends React.Component {
 	}
 
 	render() {
-		const {game_type, player_one, player_two, stats, scores} = this.props.standing;
+		const { game_type, player_one, player_two, stats, scores, date } = this.props.standing;
 		return (
 			<div className="standing-item-list">
 				<li>
@@ -18,13 +19,13 @@ class StandingItem extends React.Component {
 								<br />
 								<span>Wins: {stats.player_one_wins}</span>
 								<br/>
-								<span>WinPercentage: {(stats.player_one_wins / stats.total_games) * 100}%</span>
+								<span>WinPercentage: {(stats.player_one_wins / stats.total_games).toFixed(3)}</span>
 								<br />
-								<span>Lifetime Points: {scores.player_one_points}</span>
+								<span>Lifetime Points: {scores.player_one_total_points}</span>
 								<br />
-								<span>Score Differential: {scores.player_one_points - scores.player_two_points}</span>
+								<span>Score Differential: {scores.player_one_total_points - scores.player_two_total_points}</span>
 								<br />
-								<p>Avg. Point Differential: {(scores.player_one_points - scores.player_two_points) / stats.total_games }</p>
+								<p>Avg. Point Differential: {((scores.player_one_total_points - scores.player_two_total_points) / stats.total_games).toFixed(3) }</p>
 							</div>
 							<hr />
 							<div className="player-game-stats">
@@ -32,16 +33,22 @@ class StandingItem extends React.Component {
 								<br />
 								<span>Wins: {stats.player_two_wins}</span>
 								<br />					
-								<span>Win Percentage: {(stats.player_two_wins / stats.total_games) * 100}%</span>
+								<span>Win Percentage: {(stats.player_two_wins / stats.total_games).toFixed(3) }</span>
 								<br />					
-								<span>Lifetime Points: {scores.player_two_points}</span>
+								<span>Lifetime Points: {scores.player_two_total_points}</span>
 								<br />
-								<span>Score Differential: {scores.player_two_points - scores.player_one_points}</span>
+								<span>Score Differential: {scores.player_two_total_points - scores.player_one_total_points}</span>
 								<br />
-								<p>Avg. Point Differential: {(scores.player_two_points - scores.player_one_points) / stats.total_games }</p>
+								<p>Avg. Point Differential: {((scores.player_two_total_points - scores.player_one_total_points) / stats.total_games).toFixed(3) }</p>
 							</div>
 						</div>
-						
+						<Chart 
+							player_one={player_one}
+							player_two={player_two}
+							scores={scores}
+							date={date}
+							stats={stats}
+							/>
 					</div>
 				</li>
 			</div>
