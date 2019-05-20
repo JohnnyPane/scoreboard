@@ -2,10 +2,6 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 
 class Chart extends React.Component {
-	componentDidMount() {
-		console.log(this.props);
-	}
-
 	render(){
 		const { date, player_one, player_two, scores, stats } = this.props;
 		
@@ -22,15 +18,8 @@ class Chart extends React.Component {
   	return arr
 		}
 
-		console.log(scores.player_one_points_collection)
-
-		const apple = aggregator(scores.player_one_points_collection);
-
-		console.log(apple);
-
-		const banana = aggregator(scores.player_two_points_collection);
-
-		console.log(banana);
+		const playerOneCollect = aggregator(scores.player_one_points_collection);
+		const playerTwoCollect = aggregator(scores.player_two_points_collection);
 
 		const subtractor = (arr1, arr2) => {
 		  let scores = [];
@@ -40,9 +29,8 @@ class Chart extends React.Component {
 		  return scores;
 		};
 
-		const china = subtractor(apple, banana);
-
-		console.log(china);
+		const playerOneDiff = subtractor(playerOneCollect, playerTwoCollect);
+		const playerTwoDiff = subtractor(playerTwoCollect, playerOneCollect)
 
 		const averager = arr => {
 		  for (let i = 1; i < arr.length; i++) {
@@ -51,21 +39,27 @@ class Chart extends React.Component {
 		  return arr;
 		}
 
-		const mapleTree = averager(china);
-
-		console.log(china);
+		const playerOneHandicap = averager(playerOneDiff);
+		const playerTwoHandicap = averager(playerTwoDiff);
 
 		const chartData = {
 			labels: labelMaker,
 			datasets:[
 				{
-					label: "Avg. Point Differential",
-					data: china,
+					label: `${player_one} handicap`,
+					data: playerOneHandicap,
 					backgroundColor: 'rgba(97, 254, 186, 0.6)',
 					borderWidth:1,
 					borderColor:'#000'
 				},
-			]
+				{
+					label: `${player_two} handicap`,
+					data: playerTwoHandicap,
+					backgroundColor: 'rgba(240, 128, 128, 0.6)',
+					borderWidth: 1,
+					borderColor:'#000'
+				}
+			],
 		}
 
 		return (
@@ -73,7 +67,10 @@ class Chart extends React.Component {
 				<Line
 					data={chartData}
 					options={{
-						maintainAspectRatio: false
+						maintainAspectRatio: false,
+						legend: {
+							position: 'bottom'
+						}
 					}}
 				/>
 			</div>

@@ -16,6 +16,10 @@ class ScoreForm extends React.Component {
 		this.navigateToScoreboard = this.navigateToScoreboard.bind(this);
 	}
 
+	componentDidMount() {
+		console.log(this.props);
+	}
+
 	navigateToScoreboard() {
 		this.props.history.push('/');
 	}
