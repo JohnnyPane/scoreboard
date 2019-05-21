@@ -21,6 +21,13 @@ export const logout = () => (
 	})
 );
 
+export const fetchOtherUsers = () => (
+	$.ajax({
+		method: 'GET',
+		url: '/api/users'
+	})
+);
+
 // export const createAPI = (modelName) => {
 
 // 	return {

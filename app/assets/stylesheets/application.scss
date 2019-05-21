@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+@import "custom";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
 html,
 body,
 ul,
@@ -389,7 +392,7 @@ hgroup {
 	text-align: center;
 	margin-top: 100px;
 	box-shadow: 0 0 3px lightgray;
-	background: rgb(255, 255, 255, 0.6);
+	background: rgba(255, 255, 255, 0.6);
 	padding: 20px;
 	border-radius: 5px;
 }

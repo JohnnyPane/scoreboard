@@ -2,16 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
+import 'bootstrap';
 
 import { login } from './actions/session_actions';
-
-import { fetchStandings, fetchStanding } from './actions/standing_actions';
-
-  // window.fetchStandings = fetchStandings;
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
-  // window.fetchStanding = fetchStanding;
-
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

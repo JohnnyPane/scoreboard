@@ -10,6 +10,11 @@ class Api::UsersController < ApplicationController
 		end
 	end
 
+	def index 
+		@users = User.all.where.not(id: current_user.id)
+		render :index
+	end
+	
 	private
 
 	def user_params

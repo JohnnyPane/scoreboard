@@ -1,14 +1,15 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
+import SearchBox from './score_user_search';
 
 
 class ScoreForm extends React.Component {
 	constructor(props) {
 		super(props);
+		this.playerOne = { name: props.player_one };
 		this.state = {
 			game_type: '',
-			player_one: '',
 			player_two: '',
 			final_score: 25
 		};
@@ -34,7 +35,7 @@ class ScoreForm extends React.Component {
 		e.preventDefault();
 		const formData = new FormData()
 		formData.append('score[game_type]', this.state.game_type);
-		formData.append('score[player_one]', this.state.player_one);
+		formData.append('score[player_one]', this.playerOne['name']);
 		formData.append('score[player_two]', this.state.player_two);
 		formData.append('score[final_score]', this.state.final_score);
 		this.props.createScore(formData).then(() => (
@@ -42,8 +43,8 @@ class ScoreForm extends React.Component {
 	};
 
 	render() {
-		const { game_type, player_one, player_two, final_score } = this.state;
-
+		const { game_type, player_two, final_score } = this.state;
+		const { fetchOtherUsers } = this.props;
 		return (
 			<div className="new-score-container">
 			  <Link to="/">Back to Scores Index</Link>
@@ -63,7 +64,7 @@ class ScoreForm extends React.Component {
 							<label className="score-field">Player One: </label>
 							<input
 								type="text"
-								value={player_one}
+								value={this.playerOne.name}
 								onChange={this.update('player_one')}
 								className="score-field"
 							/>
@@ -75,6 +76,8 @@ class ScoreForm extends React.Component {
 								onChange={this.update('player_two')}
 								className="score-field"
 							/>
+
+							<SearchBox fetchOtherUsers={fetchOtherUsers} />
 
 							<label className="score-field">Game up to: </label>
 							<input

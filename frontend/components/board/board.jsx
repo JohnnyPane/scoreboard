@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import BoardItem from './board_item';
 
-const Board = ({ fetchScore, score, updateScore, scoreId }) => {
+const Board = ({ fetchScore, score, updateScore, scoreId, fetchScores }) => {
 	return(
 		<div className="single-board-show">
 			<div className="index-redirect">
@@ -14,7 +14,8 @@ const Board = ({ fetchScore, score, updateScore, scoreId }) => {
 					fetchScore={fetchScore} 
 					score={score} 
 					updateScore={updateScore}
-					scoreId={scoreId} />
+					scoreId={scoreId}
+					fetchScores={fetchScores} />
 			</div>
 		</div>
 	);
