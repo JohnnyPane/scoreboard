@@ -6,14 +6,15 @@ import ScoreForm from './score_form';
 
 const mapStateToProps = state => ({
 	player_one: state.entities.users[state.session.id].username,
-	opponents: state.entities.opponents
+	opponents: Object.keys(state.entities.opponents).map(key => state.entities.opponents[key])
 });
 
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
+	fetchOtherUsers: () => dispatch(fetchOtherUsers()),
 	createScore: score => dispatch(createScore(score)),
 	fetchScore: id => dispatch(fetchScore(id)),
-	fetchOtherUsers: () => dispatch(fetchOtherUsers())
+	
 });
 
 export default connect(

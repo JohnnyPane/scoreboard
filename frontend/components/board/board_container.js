@@ -16,10 +16,9 @@ const mapStateToProps = (state, { match }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-	fetchScore: id => dispatch(fetchScore(id)),
+	fetchScores: () => dispatch(fetchScores()),
 	fetchStandings: () => dispatch(fetchStandings()),
 	updateScore: score => dispatch(updateScore(score)),
-	fetchScores: () => dispatch(fetchScores())
 });
 
 export default connect(

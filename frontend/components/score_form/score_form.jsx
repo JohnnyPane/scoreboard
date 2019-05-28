@@ -18,7 +18,7 @@ class ScoreForm extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log(this.props);
+		this.props.fetchOtherUsers();
 	}
 
 	navigateToScoreboard() {
@@ -44,7 +44,7 @@ class ScoreForm extends React.Component {
 
 	render() {
 		const { game_type, player_two, final_score } = this.state;
-		const { fetchOtherUsers } = this.props;
+		const { opponents } = this.props;
 		return (
 			<div className="new-score-container">
 			  <Link to="/">Back to Scores Index</Link>
@@ -77,7 +77,9 @@ class ScoreForm extends React.Component {
 								className="score-field"
 							/>
 
-							<SearchBox fetchOtherUsers={fetchOtherUsers} />
+							<SearchBox opponents={opponents} />
+
+							<br/>
 
 							<label className="score-field">Game up to: </label>
 							<input
