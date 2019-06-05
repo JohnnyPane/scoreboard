@@ -1,5 +1,5 @@
 class Score < ApplicationRecord
-	validates :game_type, :author_id, presence: true
+	validates :game_type, :author_id, :player_two, presence: true
 
 	belongs_to :author,
 		primary_key: :id,
