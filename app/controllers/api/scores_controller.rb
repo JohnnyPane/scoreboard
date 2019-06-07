@@ -17,7 +17,7 @@ class Api::ScoresController < ApplicationController
 	end
 
 	def index
-		@scores = Score.all.where(author_id: current_user.id)
+		@scores = Score.all.where(author_id: current_user.id).or(Score.all.where(player_two: current_user.username))
 		render :index
 	end
 
