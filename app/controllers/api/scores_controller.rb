@@ -30,6 +30,12 @@ class Api::ScoresController < ApplicationController
 		end
 	end
 
+	def destroy 
+		@score = current_user.scores.find(params[:id])
+		@score.destroy
+		render json: @score
+	end
+
 	private 
 
 	def score_params

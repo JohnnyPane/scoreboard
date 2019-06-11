@@ -13,7 +13,7 @@ class ScoreIndexItem extends React.Component {
   }
 
 	render() {
-		const { game_type, player_one, player_two, final_score, player_one_score, player_two_score} = this.props.score;
+		const { game_type, player_one, player_two, final_score, player_one_score, player_two_score, destroyScore} = this.props.score;
 		return (
 			<div className="score-index-item"
 					 onClick={this.handleClick} >

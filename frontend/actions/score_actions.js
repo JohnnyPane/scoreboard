@@ -2,6 +2,7 @@ import * as APIUtil from '../util/score_api_util';
 
 export const RECEIVE_SCORES = 'RECEIVE_SCORES';
 export const RECEIVE_SCORE = 'RECEIVE_SCORE';
+export const REMOVE_SCORE = 'REMOVE_SCORE';
 
 export const receiveScores = scores => ({
 	type: RECEIVE_SCORES,
@@ -12,6 +13,11 @@ export const receiveScore = score => ({
 	type: RECEIVE_SCORE,
 	score
 });
+
+export const removeScore = score => ({
+	type: REMOVE_SCORE,
+	score
+})
 
 export const createScore = score => dispatch => (
 	APIUtil.createScore(score).then(score => (
@@ -37,3 +43,6 @@ export const fetchScores = () => dispatch => (
 	))
 );
 
+export const deleteScore = score => dispatch => (
+	APIUtil.destroyScore(score).then(score => dispatch(removeScore(score)))
+);

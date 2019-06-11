@@ -36,8 +36,41 @@ class PlayerScores extends React.Component {
 
 		const overDisplay = () => (
 			<div className="game-over">
+
 				<h1>Game Over! {this.props.score.player_one} WINS!</h1>
 				<button onClick={this.addScores}>Submit Score to Standings</button>
+				<div className="score-wrapper">
+					<div className="player-score">
+						<h1 id="scorekeep">{player_one_score}</h1>
+						<br/>
+						<button onClick={() => this.setState({ count: player_one_score + 1})}>+1</button>
+						<button onClick={() => this.setState({ count: player_one_score + 3})}>+3</button>
+						<button onClick={() => this.setState({ count: player_one_score + 5})}>+5</button>
+						<button onClick={() => this.setState({ count: player_one_score + 10})}>+10</button>
+						<button onClick={() => this.setState({ count: player_one_score + 25})}>+25</button>
+						<br/>
+						<button onClick={() => this.setState({ count: player_one_score - 1})}>-1</button>
+						<button onClick={() => this.setState({ count: player_one_score - 3})}>-3</button>
+						<button onClick={() => this.setState({ count: player_one_score - 5})}>-5</button>
+						<button onClick={() => this.setState({ count: player_one_score - 10})}>-10</button>
+						<button onClick={() => this.setState({ count: player_one_score - 25})}>-25</button>
+					</div>
+					<div className="player-score">
+						<h1 id="scorekeep">{player_two_score}</h1>
+						<br/>
+						<button onClick={() => this.setState({ count2: player_two_score + 1})}>+1</button>
+						<button onClick={() => this.setState({ count2: player_two_score + 3})}>+3</button>
+						<button onClick={() => this.setState({ count2: player_two_score + 5})}>+5</button>
+						<button onClick={() => this.setState({ count2: player_two_score + 10})}>+10</button>
+						<button onClick={() => this.setState({ count2: player_two_score + 25})}>+25</button>
+						<br/>
+						<button onClick={() => this.setState({ count2: player_two_score - 1})}>-1</button>
+						<button onClick={() => this.setState({ count2: player_two_score - 3})}>-3</button>
+						<button onClick={() => this.setState({ count2: player_two_score - 5})}>-5</button>
+						<button onClick={() => this.setState({ count2: player_two_score - 10})}>-10</button>
+						<button onClick={() => this.setState({ count2: player_two_score - 25})}>-25</button>
+					</div>
+				</div>		
 			</div>
 		);
 
@@ -45,6 +78,38 @@ class PlayerScores extends React.Component {
 			<div className="game-over">
 				<h1>Game Over! {this.props.score.player_two} WINS!</h1>
 				<button onClick={this.addScores}>Submit Score to Standings</button>
+				<div className="score-wrapper">
+					<div className="player-score">
+						<h1 id="scorekeep">{player_one_score}</h1>
+						<br/>
+						<button onClick={() => this.setState({ count: player_one_score + 1})}>+1</button>
+						<button onClick={() => this.setState({ count: player_one_score + 3})}>+3</button>
+						<button onClick={() => this.setState({ count: player_one_score + 5})}>+5</button>
+						<button onClick={() => this.setState({ count: player_one_score + 10})}>+10</button>
+						<button onClick={() => this.setState({ count: player_one_score + 25})}>+25</button>
+						<br/>
+						<button onClick={() => this.setState({ count: player_one_score - 1})}>-1</button>
+						<button onClick={() => this.setState({ count: player_one_score - 3})}>-3</button>
+						<button onClick={() => this.setState({ count: player_one_score - 5})}>-5</button>
+						<button onClick={() => this.setState({ count: player_one_score - 10})}>-10</button>
+						<button onClick={() => this.setState({ count: player_one_score - 25})}>-25</button>
+					</div>
+					<div className="player-score">
+						<h1 id="scorekeep">{player_two_score}</h1>
+						<br/>
+						<button onClick={() => this.setState({ count2: player_two_score + 1})}>+1</button>
+						<button onClick={() => this.setState({ count2: player_two_score + 3})}>+3</button>
+						<button onClick={() => this.setState({ count2: player_two_score + 5})}>+5</button>
+						<button onClick={() => this.setState({ count2: player_two_score + 10})}>+10</button>
+						<button onClick={() => this.setState({ count2: player_two_score + 25})}>+25</button>
+						<br/>
+						<button onClick={() => this.setState({ count2: player_two_score - 1})}>-1</button>
+						<button onClick={() => this.setState({ count2: player_two_score - 3})}>-3</button>
+						<button onClick={() => this.setState({ count2: player_two_score - 5})}>-5</button>
+						<button onClick={() => this.setState({ count2: player_two_score - 10})}>-10</button>
+						<button onClick={() => this.setState({ count2: player_two_score - 25})}>-25</button>
+					</div>
+				</div>	
 			</div>
 		)
 

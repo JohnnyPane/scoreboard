@@ -30,3 +30,10 @@ export const updateScore = score => {
 		data: { score }
 	})
 };
+
+export const destroyScore = score => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/scores/${score.id}`
+  })
+);

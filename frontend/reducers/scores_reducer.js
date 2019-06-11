@@ -2,7 +2,8 @@ import merge from 'lodash/merge';
 
 import { 
 	RECEIVE_SCORES,
-	RECEIVE_SCORE
+	RECEIVE_SCORE,
+	REMOVE_SCORE
 } from '../actions/score_actions';
 
 const scoresReducer = (state = {}, action) => {
@@ -13,6 +14,10 @@ const scoresReducer = (state = {}, action) => {
 		case RECEIVE_SCORE:
 			const newScore = { [action.score.id]: action.score };
 			return merge({}, state, newScore);
+		case REMOVE_SCORE:
+			nextState = merge({}, state);
+			delete nextState[action.score.id];
+			return nextState;
 		default:
 			return state;
 	}

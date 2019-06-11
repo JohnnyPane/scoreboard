@@ -13,7 +13,6 @@ import SignupFormContainer from './session_forms/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HomeContainer from './home/home_container';
 import ScoreFormContainer from './score_form/score_form_container';
-import MainScoreContainer from './main_score/main_score_container';
 import BoardContainer from './board/board_container';
 import StandingContainer from './standings/standings_container';
 

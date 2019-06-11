@@ -10,7 +10,7 @@ class ScoreForm extends React.Component {
 		this.state = {
 			game_type: '',
 			player_two: '',
-			final_score: 25
+			final_score: ''
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.navigateToScoreboard = this.navigateToScoreboard.bind(this);

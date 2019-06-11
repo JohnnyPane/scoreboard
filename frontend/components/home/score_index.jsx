@@ -18,7 +18,7 @@ class ScoreIndex extends React.Component {
 	}
 
 	render() {
-		const { scores } = this.props;
+		const { scores, destroyScore } = this.props;
 		return (
 				<div className="score-index">
 					<h1>Click on a score to go to it's scoreboard</h1>
@@ -31,6 +31,7 @@ class ScoreIndex extends React.Component {
 							<ScoreIndexItem
 								key={i} 
 								score={score}
+								destroyScore={destroyScore}
 							 /> 
 								)
 							)

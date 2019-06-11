@@ -6,6 +6,10 @@ class Api::StandingsController < ApplicationController
 		render :index
 	end
 
+	# def show
+	# 	@standings = Score.all.where
+	# end
+
 	private
 
 	def standing_params

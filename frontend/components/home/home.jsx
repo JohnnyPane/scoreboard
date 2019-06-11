@@ -1,5 +1,4 @@
 import React from 'react';
-import MainScore from '../main_score/main_score';
 import ScoreIndex from './score_index';
 
 
