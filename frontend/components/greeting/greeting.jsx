@@ -13,15 +13,15 @@ const Greeting = ({ currentUser, logout }) => {
 	const personalGreeting = () => (
 		<hgroup className="header-group">
 			<h2 className="header-name">
-				<Dropdown>
+				<Dropdown className="nav-dropdown">
 				  <Dropdown.Toggle variant="success" id="dropdown-basic">
 				    Hi, {currentUser.username}
 				  </Dropdown.Toggle>
 
 				  <Dropdown.Menu>
 				    <Dropdown.Item href="/#">Home</Dropdown.Item>
-				    <Dropdown.Item href="#/standings">Standings</Dropdown.Item>
-				    <Dropdown.Item href="#/scores/new">Create Scoreboard</Dropdown.Item>
+				    <Dropdown.Item href="/#/standings">Standings</Dropdown.Item>
+				    <Dropdown.Item href="/#/scores/new">Create Scoreboard</Dropdown.Item>
 				  </Dropdown.Menu>
 				</Dropdown>
 			</h2>
@@ -34,15 +34,3 @@ const Greeting = ({ currentUser, logout }) => {
 };
 
 export default Greeting;
-
-// <Link to="/standings"> Hi, {currentUser.username}</Link>
-				// <div className="dropdown">
-				//   <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				//     Hi, {currentUser.username}
-				//   </button>
-				//   <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				//     <a className="dropdown-item" href="#">Action</a>
-				//     <a className="dropdown-item" href="#">Another action</a>
-				//     <a className="dropdown-item" href="#">Something else here</a>
-				//   </div>
-				// </div>

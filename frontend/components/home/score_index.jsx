@@ -45,17 +45,3 @@ class ScoreIndex extends React.Component {
 
 export default withRouter(ScoreIndex);
 
-// const ScoreIndex = ({ scores, fetchScores }) => (
-// 	<div>
-// 		<h1>Scores: </h1>
-// 		{scores.map((score, i) => (
-// 			<ScoreIndexItem
-// 				score={score}
-// 				key={i}
-// 				fetchScores={fetchScores}
-// 			/>
-// 		))}
-// 	</div>
-// );
-
-// export default ScoreIndex;

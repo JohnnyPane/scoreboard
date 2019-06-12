@@ -33,20 +33,3 @@ class StandingIndex extends React.Component {
 }
 
 export default StandingIndex;
-
-
-
-
-		// 	<div className="standings-div">
-		// 		<ul>
-		// 			{standings.reverse().map(standing => (
-		// 				<StandingItem
-		// 					key={standing.id}
-		// 					standing={standing}
-		// 					fetchStandings={fetchStandings}
-		// 				/>
-		// 				)
-		// 			)
-		// 		}
-		// 	</ul>
-		// </div>

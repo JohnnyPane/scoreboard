@@ -36,7 +36,6 @@ class PlayerScores extends React.Component {
 
 		const overDisplay = () => (
 			<div className="game-over">
-
 				<h1>Game Over! {this.props.score.player_one} WINS!</h1>
 				<button onClick={this.addScores}>Submit Score to Standings</button>
 				<div className="score-wrapper">

@@ -110,6 +110,7 @@ header {
 
 header > h1 {
 	margin-left: 80px;
+	margin-top: 0.5rem;
 	color: gray;
 }
 
@@ -141,6 +142,10 @@ hgroup {
 .header-button:hover {
 	background: lightgray;
 	cursor: pointer;
+}
+
+.nav-dropdown {
+	margin-top: 0.5rem;
 }
 
 

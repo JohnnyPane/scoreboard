@@ -33,7 +33,6 @@ class Score < ApplicationRecord
 		end
 	end
 
-
 	def players_key
 		[player_one, player_two].map(&:downcase).sort().join("_")
 	end
