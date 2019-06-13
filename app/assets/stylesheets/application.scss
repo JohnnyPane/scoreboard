@@ -188,7 +188,7 @@ hgroup {
 .score-index-item:hover {
 	cursor: pointer;
 	color: white;
-	background: black;
+	background: rgba(0, 0, 0, 0.8);
 }
 
 .score-index-item > li > h4 {
@@ -211,6 +211,29 @@ hgroup {
 	cursor: pointer;
 }
 
+.score-index-item > li {
+	width: 75%;
+}
+
+.delete-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 25%;
+}
+
+.delete-button {
+	height: 2rem;
+  width: 7rem;
+	text-overflow: clip;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.delete-button:hover {
+	border: 2px solid rgba(255, 255, 255, 0.8);
+	background: rgba(255, 0, 0, 0.8);
+}
 /* SCOREBOARD STYLING */
 
 #main-scoreboard {
@@ -390,6 +413,16 @@ hgroup {
 
 .all-player-stats > hr {
 	margin: 0;
+}
+
+.quick-score-button {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.quick-score-button:hover {
+	background: darkslategray;
+	color: white;
 }
 
 /* CREATE SCOREBOARD FORM */

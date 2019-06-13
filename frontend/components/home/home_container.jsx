@@ -9,9 +9,9 @@ const mapStateToProps = state => ({
 	scores: Object.keys(state.entities.scores).map(key => state.entities.scores[key])
 });
 
-const mapDispatchToProps = (dispatch, { score }) => ({
+const mapDispatchToProps = (dispatch) => ({
 	fetchScores: () => dispatch(fetchScores()),
-	destroyScore: () => dispatch(deleteScore(score))
+	destroyScore: id => dispatch(deleteScore(id))
 });
 
 export default connect(

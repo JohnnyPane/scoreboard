@@ -13,7 +13,7 @@ class StandingIndex extends React.Component {
 	}
 
 	render() {
-		const { standings, fetchStandings } = this.props;
+		const { standings, fetchStandings, createScore } = this.props;
 		return (
 			<div className="standings-index">
 				<Link to="/">Back to scores</Link>
@@ -24,6 +24,7 @@ class StandingIndex extends React.Component {
 							key={i}
 							standing={standing}
 							fetchStandings={fetchStandings}
+							createScore={createScore}
 						/>
 					))}
 				</ul>

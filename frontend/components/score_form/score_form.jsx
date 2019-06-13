@@ -14,7 +14,6 @@ class ScoreForm extends React.Component {
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.navigateToScoreboard = this.navigateToScoreboard.bind(this);
-		this.selectOpponent = this.selectOpponent.bind(this, 'player_two');
 	}
 
 	componentDidMount() {
@@ -28,12 +27,6 @@ class ScoreForm extends React.Component {
 	update(property) {
 		return e => this.setState({
 			[property]: e.target.value
-		});
-	}
-
-	selectOpponent(e) {
-		return e => this.setState({
-			player_two: e.currentTarget.innerText
 		});
 	}
 

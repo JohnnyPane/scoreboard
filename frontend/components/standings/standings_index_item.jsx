@@ -1,13 +1,42 @@
 import React from 'react';
 import Chart from '../chart/chart';
+import { withRouter } from 'react-router';
 
 class StandingItem extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			final_score: ''
+		};
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.navigateToScoreboard = this.navigateToScoreboard.bind(this);
+	}
+
+	navigateToScoreboard() {
+		this.props.history.push('/');
+	}
+
+	handleSubmit(e) {
+		e.preventDefault();
+		const formData = new FormData();
+		formData.append('score[game_type]', this.props.standing.game_type);
+		formData.append('score[player_one]', this.props.standing.player_one);
+		formData.append('score[player_two]', this.props.standing.player_two);
+		formData.append('score[final_score]', this.props.standing.date[0].final_score);
+		this.props.createScore(formData).then(() => (
+			this.navigateToScoreboard()))
+	};
+
+	update(property) {
+		return e => this.setState({
+			[property]: e.target.value
+		});
 	}
 
 	render() {
 		const { game_type, player_one, player_two, stats, scores, date } = this.props.standing;
+		const { final_score } = this.state;
+
 		return (
 			<div className="standing-item-list">
 				<li>
@@ -49,6 +78,15 @@ class StandingItem extends React.Component {
 							date={date}
 							stats={stats}
 							/>
+						<form onSubmit={this.handleSubmit}>
+							<div className="button-holder">
+		            <input
+		              type="submit"
+		              value="Create Quick Score"
+		              className="quick-score-button"
+		            />
+		          </div>
+						</form>
 					</div>
 				</li>
 			</div>
@@ -56,4 +94,4 @@ class StandingItem extends React.Component {
 	}
 }
 
-export default StandingItem;
+export default withRouter(StandingItem);

@@ -17,7 +17,7 @@ export const receiveScore = score => ({
 export const removeScore = score => ({
 	type: REMOVE_SCORE,
 	score
-})
+});
 
 export const createScore = score => dispatch => (
 	APIUtil.createScore(score).then(score => (
@@ -43,6 +43,6 @@ export const fetchScores = () => dispatch => (
 	))
 );
 
-export const deleteScore = score => dispatch => (
-	APIUtil.destroyScore(score).then(score => dispatch(removeScore(score)))
+export const deleteScore = id => dispatch => (
+	APIUtil.destroyScore(id).then(score => dispatch(removeScore(score)))
 );

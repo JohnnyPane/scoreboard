@@ -8,6 +8,8 @@ import {
 
 const scoresReducer = (state = {}, action) => {
 	Object.freeze(state);
+	let nextState = {};
+	
 	switch(action.type) {
 		case RECEIVE_SCORES:
 			return action.scores
