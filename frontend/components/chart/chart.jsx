@@ -26,7 +26,7 @@ class Chart extends React.Component {
 
 	averager(arr) {
 	  for (let i = 1; i < arr.length; i++) {
-	    arr[i] = arr[i] / (i + 1);
+	    arr[i] = (arr[i] / (i + 1)).toFixed(3);
 	  } 
 	  return arr;
 	}

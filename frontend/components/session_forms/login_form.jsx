@@ -9,6 +9,7 @@ class LoginForm extends React.Component {
 			password: ''
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoSubmit = this.demoSubmit.bind(this);
 	}
 
 	update(field) {
@@ -22,6 +23,13 @@ class LoginForm extends React.Component {
 		const user = Object.assign({}, this.state);
 		this.props.processForm(user);
 	}
+
+  demoSubmit(e) {
+    e.preventDefault();
+    const guestUser = { username: 'guest', password: 'password' };
+    const guest = Object.assign({}, guestUser);
+    this.props.processForm(guest);
+  }
 
   renderErrors() {
     return(
@@ -37,7 +45,7 @@ class LoginForm extends React.Component {
 
   render() {
   	return (
-  		<div className="login-form-container">
+      <div className="login-form-container">
   			<form onSubmit={this.handleSubmit} className="login-form-box">
   				Welcome to the Office Scoreboard!
   				<br/>
@@ -63,6 +71,14 @@ class LoginForm extends React.Component {
   					<br/>
   					<input className="session-submit" type="submit" value={this.props.formType} />
   				</div>
+          <div className="demo-login">
+          <p>-or-</p>
+            <form onSubmit={this.demoSubmit} className="demo-box">
+             Try the demo login!
+              <br/>
+              <input className="demo-submit" type="submit" value="Demo" />
+            </form>
+          </div>
   			</form>
   		</div>
   	);

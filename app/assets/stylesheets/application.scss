@@ -99,6 +99,26 @@ nav.login-signup > a:hover {
 	color: orange;
 }
 
+.demo-login {
+	text-align: center;
+	margin-top: 9px;
+}
+
+.demo-submit {
+	margin-top: 12px;
+}
+
+.demo-submit:hover {
+	background: #C0D890;
+	color: white;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.demo-login > p {
+	color: mediumpurple;
+}
+
 /* HEADER */
 
 header {
@@ -228,6 +248,7 @@ hgroup {
 	text-overflow: clip;
 	white-space: nowrap;
 	overflow: hidden;
+	box-shadow: 0 0 3px red;
 }
 
 .delete-button:hover {
@@ -368,7 +389,7 @@ hgroup {
 
 .standing-item-list > li {
 	background: white;
-	opacity: 0.7;
+	opacity: 0.8;
 	box-shadow: 0 0 3px lightgray;
 	margin-top: 25px;
 	width: 40%;

@@ -13,8 +13,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
 	fetchOtherUsers: () => dispatch(fetchOtherUsers()),
 	createScore: score => dispatch(createScore(score)),
-	fetchScore: id => dispatch(fetchScore(id)),
-	
+	fetchScore: id => dispatch(fetchScore(id))
 });
 
 export default connect(
