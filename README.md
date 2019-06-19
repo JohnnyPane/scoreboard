@@ -8,17 +8,17 @@ The Office Scoreboard is a full-stack web application that utilizes Ruby on Rail
 
 This application was built to keep scores of your favorite office games. It tracks head to head matchups between you and your friends. Once games are completed they can be submitted to your autopopulated standings page that will display all the stats you could ever want. Lifetime wins, points, score differential, etc. are all stored in one convenient place so you can once and for all prove who's truly the best Ping Pong player in the office.  
 
-![Optional Text](./read_me_images/score_board_1.png)
+![Optional Text](./read_me_images/scoreboard_1.png)
 
 ## Authentication 
 
 Password Encryption:
 
 ```ruby
-	def password=(password)
-		@password = password
-		self.password_digest = BCrypt::Password.create(password)
-	end
+def password=(password)
+@password = password
+self.password_digest = BCrypt::Password.create(password)
+end
 ```
 
 Users can create their own login with a username, email, and password (there is additionally an option to use the guest login to create quick scoreboards). The bcrypt gem is used to encrypt the password and every time a user logs in, a new session is created to keep the applications state. 
@@ -27,9 +27,9 @@ Users can create their own login with a username, email, and password (there is 
 Checking proper password input:
 
 ```ruby 
-	def is_password?(password)
-		BCrypt::Password.new(self.password_digest).is_password?(password)
-	end
+def is_password?(password)
+BCrypt::Password.new(self.password_digest).is_password?(password)
+end
 ```
 
 ## Standings
@@ -41,37 +41,37 @@ When a game is finished the user can submit the score to their local standings, 
 Score Model Query: 
 
 ```ruby
-	def self.head_to_head_player_standings
-		all.to_a.group_by(&:game_key).map do |game_key, scores|
-			game_type, player_one, player_two = game_key.split("_")
-			
-			{
-				game_type: game_type.split.map(&:capitalize).join(' '),
-				player_one: player_one.capitalize,
-				player_two: player_two.capitalize,
-				stats: {
-					total_games: scores.length,
-					player_one_wins: scores.select { |score| score.winner.downcase == player_one }.length,
-					player_two_wins: scores.select { |score| score.winner.downcase == player_two }.length,
-				},
-				scores: {
-					player_one_total_points: scores.map { |score| score.player_one.downcase == player_one ? score.player_one_score : score.player_two_score }.reduce(:+),
-					player_two_total_points: scores.map { |score| score.player_two.downcase == player_two ? score.player_two_score : score.player_one_score }.reduce(:+),
-					player_one_points_collection: scores.map { |score| score.player_one.downcase == player_one ? score.player_one_score : score.player_two_score },
-					player_two_points_collection: scores.map { |score| score.player_two.downcase == player_two ? score.player_two_score : score.player_one_score }
-				},
-				date: scores
-			}
-		end
-	end
+def self.head_to_head_player_standings
+all.to_a.group_by(&:game_key).map do |game_key, scores|
+game_type, player_one, player_two = game_key.split("_")
 
-	def players_key
-		[player_one, player_two].map(&:downcase).sort().join("_")
-	end
+{
+game_type: game_type.split.map(&:capitalize).join(' '),
+player_one: player_one.capitalize,
+player_two: player_two.capitalize,
+stats: {
+total_games: scores.length,
+player_one_wins: scores.select { |score| score.winner.downcase == player_one }.length,
+player_two_wins: scores.select { |score| score.winner.downcase == player_two }.length,
+},
+scores: {
+player_one_total_points: scores.map { |score| score.player_one.downcase == player_one ? score.player_one_score : score.player_two_score }.reduce(:+),
+player_two_total_points: scores.map { |score| score.player_two.downcase == player_two ? score.player_two_score : score.player_one_score }.reduce(:+),
+player_one_points_collection: scores.map { |score| score.player_one.downcase == player_one ? score.player_one_score : score.player_two_score },
+player_two_points_collection: scores.map { |score| score.player_two.downcase == player_two ? score.player_two_score : score.player_one_score }
+},
+date: scores
+}
+end
+end
 
-	def game_key
-		[game_type, players_key].map(&:downcase).join("_")
-	end
+def players_key
+[player_one, player_two].map(&:downcase).sort().join("_")
+end
+
+def game_key
+[game_type, players_key].map(&:downcase).join("_")
+end
 ```
 
 Utilizing React the statistics were easily derivable from the applications state by mapping the state to props through the standings reducer. 
@@ -80,85 +80,85 @@ There is also a create quick score button which will create a new scoreboard bas
 Standings React Component:
 
 ```JSX
-	navigateToScoreboard() {
-		this.props.history.push('/');
-	}
+navigateToScoreboard() {
+this.props.history.push('/');
+}
 
-	handleSubmit(e) {
-		e.preventDefault();
-		const formData = new FormData();
-		formData.append('score[game_type]', this.props.standing.game_type);
-		formData.append('score[player_one]', this.props.standing.player_one);
-		formData.append('score[player_two]', this.props.standing.player_two);
-		formData.append('score[final_score]', this.props.standing.date[0].final_score);
-		this.props.createScore(formData).then(() => (
-			this.navigateToScoreboard()))
-	};
+handleSubmit(e) {
+e.preventDefault();
+const formData = new FormData();
+formData.append('score[game_type]', this.props.standing.game_type);
+formData.append('score[player_one]', this.props.standing.player_one);
+formData.append('score[player_two]', this.props.standing.player_two);
+formData.append('score[final_score]', this.props.standing.date[0].final_score);
+this.props.createScore(formData).then(() => (
+this.navigateToScoreboard()))
+};
 
-	update(property) {
-		return e => this.setState({
-			[property]: e.target.value
-		});
-	}
+update(property) {
+return e => this.setState({
+[property]: e.target.value
+});
+}
 
-	render() {
-		const { game_type, player_one, player_two, stats, scores, date } = this.props.standing;
+render() {
+const { game_type, player_one, player_two, stats, scores, date } = this.props.standing;
 
-		return (
-			<div className="standing-item-list">
-				<li>
-					<div className="whole-standings">
-						<h4>{game_type}</h4>
-						<div className="all-player-stats">
-							<div className="player-game-stats">
-								<span>{player_one}</span>
-								<br />
-								<span>Wins: {stats.player_one_wins}</span>
-								<br/>
-								<span>WinPercentage: {(stats.player_one_wins / stats.total_games).toFixed(3)}</span>
-								<br />
-								<span>Lifetime Points: {scores.player_one_total_points}</span>
-								<br />
-								<span>Score Differential: {scores.player_one_total_points - scores.player_two_total_points}</span>
-								<br />
-								<p>Avg. Point Differential: {((scores.player_one_total_points - scores.player_two_total_points) / stats.total_games).toFixed(3) }</p>
-							</div>
-							<hr />
-							<div className="player-game-stats">
-								<span>{player_two}</span>
-								<br />
-								<span>Wins: {stats.player_two_wins}</span>
-								<br />					
-								<span>Win Percentage: {(stats.player_two_wins / stats.total_games).toFixed(3) }</span>
-								<br />					
-								<span>Lifetime Points: {scores.player_two_total_points}</span>
-								<br />
-								<span>Score Differential: {scores.player_two_total_points - scores.player_one_total_points}</span>
-								<br />
-								<p>Avg. Point Differential: {((scores.player_two_total_points - scores.player_one_total_points) / stats.total_games).toFixed(3) }</p>
-							</div>
-						</div>
-						<Chart 
-							player_one={player_one}
-							player_two={player_two}
-							scores={scores}
-							date={date}
-							stats={stats}
-							/>
-						<form onSubmit={this.handleSubmit}>
-							<div className="button-holder">
-		            <input
-		              type="submit"
-		              value="Create Quick Score"
-		              className="quick-score-button"
-		            />
-		          </div>
-						</form>
-					</div>
-				</li>
-			</div>
-		)
-	}
+return (
+<div className="standing-item-list">
+<li>
+<div className="whole-standings">
+<h4>{game_type}</h4>
+<div className="all-player-stats">
+<div className="player-game-stats">
+<span>{player_one}</span>
+<br />
+<span>Wins: {stats.player_one_wins}</span>
+<br/>
+<span>WinPercentage: {(stats.player_one_wins / stats.total_games).toFixed(3)}</span>
+<br />
+<span>Lifetime Points: {scores.player_one_total_points}</span>
+<br />
+<span>Score Differential: {scores.player_one_total_points - scores.player_two_total_points}</span>
+<br />
+<p>Avg. Point Differential: {((scores.player_one_total_points - scores.player_two_total_points) / stats.total_games).toFixed(3) }</p>
+</div>
+<hr />
+<div className="player-game-stats">
+<span>{player_two}</span>
+<br />
+<span>Wins: {stats.player_two_wins}</span>
+<br />					
+<span>Win Percentage: {(stats.player_two_wins / stats.total_games).toFixed(3) }</span>
+<br />					
+<span>Lifetime Points: {scores.player_two_total_points}</span>
+<br />
+<span>Score Differential: {scores.player_two_total_points - scores.player_one_total_points}</span>
+<br />
+<p>Avg. Point Differential: {((scores.player_two_total_points - scores.player_one_total_points) / stats.total_games).toFixed(3) }</p>
+</div>
+</div>
+<Chart 
+player_one={player_one}
+player_two={player_two}
+scores={scores}
+date={date}
+stats={stats}
+/>
+<form onSubmit={this.handleSubmit}>
+<div className="button-holder">
+<input
+type="submit"
+value="Create Quick Score"
+className="quick-score-button"
+/>
+</div>
+</form>
+</div>
+</li>
+</div>
+)
+}
 }
 ```
 
