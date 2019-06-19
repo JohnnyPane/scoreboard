@@ -5,9 +5,6 @@ import { withRouter } from 'react-router';
 class StandingItem extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			final_score: ''
-		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.navigateToScoreboard = this.navigateToScoreboard.bind(this);
 	}
@@ -35,7 +32,6 @@ class StandingItem extends React.Component {
 
 	render() {
 		const { game_type, player_one, player_two, stats, scores, date } = this.props.standing;
-		const { final_score } = this.state;
 
 		return (
 			<div className="standing-item-list">
