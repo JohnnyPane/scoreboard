@@ -8,7 +8,7 @@ The Office Scoreboard is a full-stack web application that utilizes Ruby on Rail
 
 This application was built to keep scores of your favorite office games. It tracks head to head matchups between you and your friends. Once games are completed they can be submitted to your autopopulated standings page that will display all the stats you could ever want. Lifetime wins, points, score differential, etc. are all stored in one convenient place so you can once and for all prove who's truly the best Ping Pong player in the office.  
 
-![Optional Text](./read_me_images/score_board_1.png)
+![Optional Text](./read_me_images/scoreboard_1.png)
 
 ## Authentication 
 
@@ -92,12 +92,12 @@ handleSubmit(e) {
  formData.append('score[player_two]', this.props.standing.player_two);
  formData.append('score[final_score]', this.props.standing.date[0].final_score);
  this.props.createScore(formData).then(() => (
-	this.navigateToScoreboard()))
+  this.navigateToScoreboard()))
 };
 
 update(property) {
  return e => this.setState({
-	 [property]: e.target.value
+  [property]: e.target.value
  });
 }
 
@@ -105,59 +105,59 @@ render() {
  const { game_type, player_one, player_two, stats, scores, date } = this.props.standing;
 
  return (
-  <div className="standing-item-list">
-	 <li>
-	  <div className="whole-standings">
-		 <h4>{game_type}</h4>
-		  <div className="all-player-stats">
-			 <div className="player-game-stats">
-			  <span>{player_one}</span>
-				<br />
-				<span>Wins: {stats.player_one_wins}</span>
-				<br/>
-				<span>WinPercentage: {(stats.player_one_wins / stats.total_games).toFixed(3)}</span>
-				<br />
-				<span>Lifetime Points: {scores.player_one_total_points}</span>
-				<br />
-				<span>Score Differential: {scores.player_one_total_points - scores.player_two_total_points}</span>
-				<br />
-				<p>Avg. Point Differential: {((scores.player_one_total_points - scores.player_two_total_points) / stats.total_games).toFixed(3) }</p>
-			 </div>
-			 <hr />
-			 <div className="player-game-stats">
-			  <span>{player_two}</span>
-				<br />
-				<span>Wins: {stats.player_two_wins}</span>
-				<br />					
-				<span>Win Percentage: {(stats.player_two_wins / stats.total_games).toFixed(3) }</span>
-				<br />					
-				<span>Lifetime Points: {scores.player_two_total_points}</span>
-				<br />
-				<span>Score Differential: {scores.player_two_total_points - scores.player_one_total_points}</span>
-				<br />
-				<p>Avg. Point Differential: {((scores.player_two_total_points - scores.player_one_total_points) / stats.total_games).toFixed(3) }</p>
-			 </div>
-		  </div>
-		  <Chart 
-			 player_one={player_one}
-			 player_two={player_two}
-			 scores={scores}
-			 date={date}
-			 stats={stats}
-			/>
-		 <form onSubmit={this.handleSubmit}>
-			<div className="button-holder">
-       <input
-        type="submit"
-        value="Create Quick Score"
-        className="quick-score-button"
-       />
+ 	<div className="standing-item-list">
+ 	<li>
+ 	 <div className="whole-standings">
+    <h4>{game_type}</h4>
+     <div className="all-player-stats">
+      <div className="player-game-stats">
+       <span>{player_one}</span>
+       <br />
+       <span>Wins: {stats.player_one_wins}</span>
+       <br/>
+       <span>WinPercentage: {(stats.player_one_wins / stats.total_games).toFixed(3)}</span>
+       <br />
+       <span>Lifetime Points: {scores.player_one_total_points}</span>
+       <br />
+       <span>Score Differential: {scores.player_one_total_points - scores.player_two_total_points}</span>
+       <br />
+       <p>Avg. Point Differential: {((scores.player_one_total_points - scores.player_two_total_points) / stats.total_games).toFixed(3) }</p>
       </div>
-		 </form>
-	  </div>
-	 </li>
-  </div>
- )
+      <hr />
+       <div className="player-game-stats">
+        <span>{player_two}</span>
+        <br />
+        <span>Wins: {stats.player_two_wins}</span>
+        <br />					
+        <span>Win Percentage: {(stats.player_two_wins / stats.total_games).toFixed(3) }</span>
+        <br />					
+        <span>Lifetime Points: {scores.player_two_total_points}</span>
+        <br />
+        <span>Score Differential: {scores.player_two_total_points - scores.player_one_total_points}</span>
+        <br />
+        <p>Avg. Point Differential: {((scores.player_two_total_points - scores.player_one_total_points) / stats.total_games).toFixed(3) }</p>
+       </div>
+      </div>
+      <Chart 
+       player_one={player_one}
+       player_two={player_two}
+       scores={scores}
+       date={date}
+       stats={stats}
+      />
+      <form onSubmit={this.handleSubmit}>
+       <div className="button-holder">
+        <input
+         type="submit"
+         value="Create Quick Score"
+         className="quick-score-button"
+        />
+       </div>
+      </form>
+     </div>
+    </li>
+   </div>
+  )
 }
 ```
 
