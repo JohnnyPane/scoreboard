@@ -26,7 +26,7 @@ const App = () => (
 	  	<AuthRoute exact path="/login" component={LoginFormContainer} />
 	  	<AuthRoute exact path="/signup" component={SignupFormContainer} />
 	  	<ProtectedRoute path="/scores/new" component={ScoreFormContainer} />
-	  	<Route path="/scores/:scoreId" component={BoardContainer} />
+	  	<ProtectedRoute path="/scores/:scoreId" component={BoardContainer} />
 	  	<ProtectedRoute path="/standings" component={StandingContainer} />
 	  	<ProtectedRoute exact path="/" component={HomeContainer} />
 	  </Switch>
@@ -34,5 +34,3 @@ const App = () => (
 );
 
 export default App;
-
-// <ProtectedRoute path="/standings" component={StandingContainer} />
