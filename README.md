@@ -81,7 +81,7 @@ Standings React Component:
 
 ```JSX
 navigateToScoreboard() {
-	this.props.history.push('/');
+ this.props.history.push('/');
 }
 
 handleSubmit(e) {
@@ -105,10 +105,10 @@ render() {
  const { game_type, player_one, player_two, stats, scores, date } = this.props.standing;
 
  return (
- 	<div className="standing-item-list">
- 	<li>
- 	 <div className="whole-standings">
-    <h4>{game_type}</h4>
+  <div className="standing-item-list">
+   <li>
+    <div className="whole-standings">
+     <h4>{game_type}</h4>
      <div className="all-player-stats">
       <div className="player-game-stats">
        <span>{player_one}</span>
