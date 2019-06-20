@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Score.delete_all;
 Standing.delete_all;
+User.delete_all;
 
 User.create!(
 	username: "guest",
