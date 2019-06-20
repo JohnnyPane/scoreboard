@@ -15,6 +15,13 @@ User.create!(
 	id: 1
 );
 
+User.creat!(
+	username: "ColemanOP",
+	password: "coleman",
+	email: "cole@cole.cole",
+	id: 2
+);
+
 Score.create!(
 	game_type: 'Ping Pong',
 	player_one: 'guest',
@@ -145,4 +152,22 @@ Score.create!(
 	player_two_score: 10
 );
 
+Score.create!(
+	game_type: 'Foosball',
+	player_one: 'guest',
+	player_two: 'Bobby',
+	author_id: 1,
+	final_score: 10,
+	player_one_score: 8,
+	player_two_score: 10
+);
 
+Score.create!(
+	game_type: 'Foosball',
+	player_one: 'guest',
+	player_two: 'Bobby',
+	author_id: 1,
+	final_score: 10,
+	player_one_score: 10,
+	player_two_score: 8
+);
