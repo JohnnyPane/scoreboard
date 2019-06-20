@@ -22,6 +22,27 @@ User.create!(
 	id: 2
 );
 
+User.create!(
+	username: "genghis",
+	password: "greatkhan",
+	email: "mongolian@conqueror.com",
+	id: 3
+);
+
+User.create!(
+	username: "Groucho",
+	password: "harpoM",
+	email: 'marx@brother.net',
+	id: 4,
+);
+
+User.create!(
+	username: "MCurie",
+	password: "genius",
+	email: "nobel@prize.uk",
+	id: 5
+);
+
 Score.create!(
 	game_type: 'Ping Pong',
 	player_one: 'guest',
