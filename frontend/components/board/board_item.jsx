@@ -9,7 +9,7 @@ class BoardItem extends React.Component {
 
 	}
 
-render() {
+	render() {
 		const { score, updateScore, scoreId, fetchScores } = this.props;
 		if (this.props.score === undefined) {
 			return <div>Is loading...</div>

@@ -18,6 +18,7 @@
 !/storage/.keep
 
 /node_modules
+/app/assets/javascripts/bundle.*
 /yarn-error.log
 
 /public/assets
