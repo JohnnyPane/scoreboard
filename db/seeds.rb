@@ -15,7 +15,7 @@ User.create!(
 	id: 1
 );
 
-User.creat!(
+User.create!(
 	username: "ColemanOP",
 	password: "coleman",
 	email: "cole@cole.cole",
