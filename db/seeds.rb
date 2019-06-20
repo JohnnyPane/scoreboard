@@ -19,7 +19,7 @@ Score.create!(
 	game_type: 'Ping Pong',
 	player_one: 'guest',
 	player_two: 'ForrestGump',
-	author_id: 4,
+	author_id: 1,
 	final_score: 21,
 	player_one_score: 17,
 	player_two_score: 21
