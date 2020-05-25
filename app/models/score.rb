@@ -42,6 +42,6 @@ class Score < ApplicationRecord
 	end
 
 	def winner
-		player_one_score > player_two_score ? player_one : player_two
+		player_one_score != 0 || player_two_score != 0 ? (player_one_score > player_two_score ? player_one : player_two) : "nil"
 	end
 end

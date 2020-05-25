@@ -24,7 +24,7 @@ class ScoreIndex extends React.Component {
 					<h1>Click on a score to go to its scoreboard</h1>
 					<h3>or click below to</h3>
 					<div className="new-board-btn">
-						<button onClick={this.handleClick}>Create Custom Scoreboard!</button>
+						<button onClick={this.handleClick}>Create a Custom Scoreboard!</button>
 					</div>
 					<ul className="score-index-list">
 						{scores.reverse().map((score, i) => ( 

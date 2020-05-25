@@ -15,10 +15,10 @@
  */
 
 
-@import "@fortawesome/fontawesome-free/css/all.min.css";
-@import "bootstrap-css-only/css/bootstrap.min.css";
-@import "custom";
-@import "../../../node_modules/bootstrap/scss/bootstrap";
+// @import "@fortawesome/fontawesome-free/css/all.min.css";
+// @import "bootstrap-css-only/css/bootstrap.min.css";
+// @import "custom";
+// @import "../../../node_modules/bootstrap/scss/bootstrap";
 
 html,
 body,
@@ -138,6 +138,14 @@ hgroup {
 	justify-content: space-between;
 	margin-left: 20px; 
 	align-items: center;
+}
+
+.noHover{
+    pointer-events: none;
+}
+
+#noHover{
+    pointer-events: none;
 }
 
 .header-name {
@@ -446,6 +454,23 @@ hgroup {
 }
 
 /* CREATE SCOREBOARD FORM */
+
+.teams-score-btn {
+	text-align: center;
+}
+
+.teams-form-or {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.score-form {
+	width: 60%;
+	background: rgba(255, 255, 255, 0.8);
+	padding: 20px;
+	border-radius: 5px;
+}
+
 .new-score-form-container {
 	display: flex;
 	justify-content: center;
@@ -484,4 +509,47 @@ hgroup {
 
 .new-score-button {
 	cursor: pointer;
+}
+
+// TEAM SCORES
+.create-team-header {
+	margin-left: 20px;
+}
+
+.teams-container {
+	margin: auto;
+}
+
+.team-name-form {
+	margin-left: 20px;
+	background: rgba(255, 255, 255, 0.8);
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.index-teams-redirect {
+	margin-left: 24px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+
+.index-teams-redirect > a {
+	text-decoration: none;
+	font-size: 20px;
+}
+
+.team-board-display {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.team-score-index-item {
+	margin-bottom: 20px;
+}
+
+.team-game-header {
+	text-align: center;
+	font-size: 100px;
+	color: rgba(0,0,0,0.6);
 }

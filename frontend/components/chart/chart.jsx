@@ -36,7 +36,13 @@ class Chart extends React.Component {
 		
 		const labelMaker = date.map((el, idx) => {
 			const labelArr = [];
-			labelArr.push(idx + 1);
+
+			let time = el.updated_at
+			let dateForGame = new Date(time).toLocaleString().split(" ")[0];
+			dateForGame = dateForGame.substring(0, dateForGame.length - 1);
+
+			labelArr.push(dateForGame);
+			// labelArr.push(idx + 1);
 			return labelArr
 		});
 
