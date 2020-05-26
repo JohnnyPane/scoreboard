@@ -8,14 +8,16 @@ class ScoreIndexItem extends React.Component {
     super(props);
     this.state = {
       loaded: false,
-      score: null
+      score: null,
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.deleteClick = this.deleteClick.bind(this);
-    this.stopHover = this.stopHover.bind(this)
-    this.removeHoverId = this.removeHoverId.bind(this)
+    this.stopHover = this.stopHover.bind(this);
+    this.removeHoverId = this.removeHoverId.bind(this);
+    this.modalEnter = this.modalEnter.bind(this);
+    this.modalExit = this.modalExit.bind(this);
   }
 
   handleDelete(e) {
@@ -27,10 +29,11 @@ class ScoreIndexItem extends React.Component {
 
   handleCancel(e) {
     e.stopPropagation();
+    const scoreId = this.props.score.id;
     this.setState({
-      loaded: false
-    })
-    $(".score-index-item").removeClass("noHover");
+      loaded: false,
+    });
+    $("#noHover").attr("id", scoreId);
   }
 
   handleClick() {
@@ -44,21 +47,38 @@ class ScoreIndexItem extends React.Component {
   }
 
   stopHover() {
-    const scoreId = "#" + this.props.score.id
+    const scoreId = "#" + this.props.score.id;
     $(scoreId).attr("id", "noHover");
-    console.log("stopped")
+    console.log("stopped");
+  }
+
+  modalEnter() {
+    $(".modal").mouseover(function () {
+      $(".score-index-item")
+        .addClass("score-index-modal")
+        .removeClass("score-index-item");
+    });
+  }
+
+  modalExit() {
+    console.log("modalll")
+    $(".modal").mouseleave(function () {
+      $(".score-index-modal")
+        .addClass("score-index-item")
+        .removeClass("score-index-modal");
+    });
   }
 
   deleteClick(e) {
-    e.stopPropagation()
-    const modalId = "#staticBackdrop" + this.props.score.id
+    e.stopPropagation();
+    const modalId = "#staticBackdrop" + this.props.score.id;
     $(modalId).modal("show");
     this.setState({
       loaded: true,
     });
     this.stopHover();
   }
-  
+
   // showModal() {
   //   if (this.state.loaded) {
   //     $("#staticBackdrop").modal("show");
@@ -66,7 +86,6 @@ class ScoreIndexItem extends React.Component {
   // };
 
   render() {
-  
     const {
       game_type,
       player_one,
@@ -76,13 +95,17 @@ class ScoreIndexItem extends React.Component {
       player_two_score,
     } = this.props.score;
 
-  //   const showModal = function() {
-  //     $("#staticBackdrop").modal("show");
-  //     //  e.stopImmediatePropagation();
-  // };
+    //   const showModal = function() {
+    //     $("#staticBackdrop").modal("show");
+    //     //  e.stopImmediatePropagation();
+    // };
 
     return (
-      <div className="score-index-item" id={this.props.score.id} onClick={this.handleClick}>
+      <div
+        className="score-index-item"
+        id={this.props.score.id}
+        onClick={this.handleClick}
+      >
         <li>
           <h4>Game Type: {game_type}</h4>
           <p>
@@ -121,14 +144,14 @@ class ScoreIndexItem extends React.Component {
           role="dialog"
           aria-labelledby="staticBackdropLabel"
           aria-modal="true"
-          onMouseEnter={this.stopHover}
-         
+          onMouseEnter={this.modalEnter}
+          onMouseLeave={this.modalExit}
         >
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="staticBackdropLabel">
-                  Modal title
+                  Delete Score
                 </h5>
                 {/* <button
                     type="button"

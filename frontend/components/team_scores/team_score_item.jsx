@@ -2,6 +2,8 @@ import React from "react";
 // import Modal from "react-bootstrap/Modal";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import $ from "jquery";
+import "bootstrap";
 
 class TeamScoreItem extends React.Component {
   constructor(props) {
@@ -30,11 +32,16 @@ class TeamScoreItem extends React.Component {
   render() {
     const { finalScore, team } = this.props;
 
+    const showModal = () => {
+      const teamId = "#staticBackdrop" + team.split(" ").join("")
+        $(teamId).modal("show");
+    };
+
     return (
       <div
         className="team-score-index-item"
         style={{
-          background: "rgba(255, 255, 255, 0.8);",
+          background: "rgba(255, 255, 255, 0.8)",
           borderRadius: "5px",
           boxShadow: "0px 0px 3px lightgray",
         }}
@@ -42,7 +49,7 @@ class TeamScoreItem extends React.Component {
         <Card
           style={{
             width: "18rem",
-            background: "rgba(255, 255, 255, 0.8);",
+            background: "rgba(255, 255, 255, 0.8)",
             borderRadius: "5px",
             boxShadow: "0px 0px 3px lightgray",
           }}
@@ -181,6 +188,56 @@ class TeamScoreItem extends React.Component {
             </Button>
           </Card.Body>
         </Card>
+        <div
+          className="modal fade"
+          id={"staticBackdrop" + team.split(" ").join("")}
+          data-backdrop="static"
+          tabIndex="-1"
+          role="dialog"
+          aria-labelledby="staticBackdropLabel"
+          aria-modal="true"
+        >
+          <div className="modal-dialog" role="document" style={{color: this.state.color}}>
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="staticBackdropLabel">
+                  {team} wins!
+                </h5>
+                {/* <button
+                    type="button"
+                    className="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button> */}
+              </div>
+              <div className="modal-body">Play another or call it a day!</div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-dismiss="modal"
+                  // onClick={(e) => this.handleCancel(e)}
+                  onClick={console.log("modal modal modal")}
+                >
+                  Edit Scores
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  data-dismiss="modal"
+                  // onClick={(e) => this.handleDelete(e)}
+                  onClick={console.log("modal modal modal")}
+                >
+                  End Game
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {this.state.score >= parseInt(finalScore) ? showModal() : null}
       </div>
     );
   }

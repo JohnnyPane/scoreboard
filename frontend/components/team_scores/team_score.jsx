@@ -13,8 +13,8 @@ class TeamScore extends React.Component {
     super(props);
     this.state = {
       teams: [],
-      finalScore: null,
-      gameType: null,
+      finalScore: 0,
+      gameType: "",
       started: false,
       teamName: "",
     };
@@ -37,7 +37,7 @@ class TeamScore extends React.Component {
 
   startGame(e) {
     e.preventDefault();
-    if (this.state.teams && (this.state.finalScore && this.state.gameType)) {
+    if (this.state.teams.length > 0 && (this.state.finalScore > 0 && this.state.gameType.length > 0 )) {
       this.setState({started: true})
     }
   }
@@ -67,7 +67,7 @@ class TeamScore extends React.Component {
           finalScore={finalScore}
           team={team}
           color={this.getRandomColor}
-          key={team}
+          key={team.split(" ").join("")}
         />
       ));
 
